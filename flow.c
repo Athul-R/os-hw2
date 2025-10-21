@@ -5,10 +5,10 @@
 #include <sys/wait.h>
 #include <fcntl.h>
 
-#define MAX_LINE 1024
+#define MAX_LINE 32768
 #define MAX_COMPONENTS 100
 #define MAX_NAME 256
-#define MAX_COMMAND 1024
+#define MAX_COMMAND 32768
 #define MAX_PARTS 50
 
 // Component types
@@ -77,6 +77,12 @@ int parse_flow_file(const char* filename) {
         
         // Skip empty lines
         if (strlen(line) == 0) continue;
+
+        // Skip comment lines (lines starting with #)
+        // Also skip lines that start with whitespace followed by #
+        char* trimmed = line;
+        while (*trimmed && (*trimmed == ' ' || *trimmed == '\t')) trimmed++;
+        if (*trimmed == '#' || *trimmed == '\0') continue;
         
         // Parse component definitions
         if (strncmp(line, "node=", 5) == 0) {
@@ -261,18 +267,9 @@ int execute_pipe(Component* pipe_comp, int input_fd, int output_fd) {
             close(input_fd);
         }
         
-        // For nodes, execute directly without recursive call
-        if (from->type == TYPE_NODE) {
-            char* argv[100];
-            parse_command(from->command, argv);
-            execvp(argv[0], argv);
-            perror("execvp");
-            exit(1);
-        } else {
-            // For other types, use execute_component
-            execute_component(pipe_comp->from, STDIN_FILENO, STDOUT_FILENO);
-            exit(0);
-        }
+        // Execute the 'from' component
+        execute_component(from->name, STDIN_FILENO, STDOUT_FILENO);
+        exit(0);
     }
     
     pid_t pid2 = fork();
@@ -290,18 +287,9 @@ int execute_pipe(Component* pipe_comp, int input_fd, int output_fd) {
             close(output_fd);
         }
         
-        // For nodes, execute directly without recursive call
-        if (to->type == TYPE_NODE) {
-            char* argv[100];
-            parse_command(to->command, argv);
-            execvp(argv[0], argv);
-            perror("execvp");
-            exit(1);
-        } else {
-            // For other types, use execute_component
-            execute_component(pipe_comp->to, STDIN_FILENO, STDOUT_FILENO);
-            exit(0);
-        }
+        // Execute the 'to' component
+        execute_component(to->name, STDIN_FILENO, STDOUT_FILENO);
+        exit(0);
     }
     
     // Parent
@@ -402,7 +390,7 @@ int execute_file(Component* file, int input_fd, int output_fd) {
         return -1;
     }
     
-    char buffer[1024];
+    char buffer[32768];
     ssize_t n;
     while ((n = read(fd, buffer, sizeof(buffer))) > 0) {
         write(output_fd, buffer, n);
@@ -414,44 +402,76 @@ int execute_file(Component* file, int input_fd, int output_fd) {
 }
 
 // Detect cycles using DFS
-int detect_cycle_helper(Component* comp) {
-    if (comp->in_progress) return 1;  // Cycle detected
-    if (comp->visited) return 0;      // Already processed
+int detect_cycle_helper(Component* comp, int* visited_stack) {
+    if (!comp) return 0;
     
-    comp->in_progress = 1;
+    // Mark this component as being processed in current path
+    int idx = comp - components;  // Get index of component
+    
+    // If already in current path, cycle detected
+    if (visited_stack[idx] == 1) {
+        return 1;  // Cycle found
+    }
+    
+    // If already fully processed in a previous path, skip
+    if (visited_stack[idx] == 2) {
+        return 0;  // Already checked, no cycle from here
+    }
+    
+    // Mark as in current path
+    visited_stack[idx] = 1;
     
     // Check dependencies based on component type
+    int has_cycle = 0;
+    
     if (comp->type == TYPE_PIPE) {
         Component* from = find_component(comp->from);
         Component* to = find_component(comp->to);
-        if (from && detect_cycle_helper(from)) return 1;
-        if (to && detect_cycle_helper(to)) return 1;
-    } else if (comp->type == TYPE_CONCATENATE) {
-        for (int i = 0; i < comp->parts_count; i++) {
-            Component* part = find_component(comp->parts[i]);
-            if (part && detect_cycle_helper(part)) return 1;
+        
+        if (from && detect_cycle_helper(from, visited_stack)) {
+            has_cycle = 1;
         }
-    } else if (comp->type == TYPE_STDERR) {
+        if (!has_cycle && to && detect_cycle_helper(to, visited_stack)) {
+            has_cycle = 1;
+        }
+    } 
+    else if (comp->type == TYPE_CONCATENATE) {
+        for (int i = 0; i < comp->parts_count && !has_cycle; i++) {
+            Component* part = find_component(comp->parts[i]);
+            if (part && detect_cycle_helper(part, visited_stack)) {
+                has_cycle = 1;
+            }
+        }
+    } 
+    else if (comp->type == TYPE_STDERR) {
         Component* from = find_component(comp->from);
-        if (from && detect_cycle_helper(from)) return 1;
+        if (from && detect_cycle_helper(from, visited_stack)) {
+            has_cycle = 1;
+        }
     }
     
-    comp->in_progress = 0;
-    comp->visited = 1;
-    return 0;
+    // Mark as fully processed
+    visited_stack[idx] = 2;
+    
+    return has_cycle;
 }
 
 int detect_cycle(const char* name) {
-    // Reset visited flags
-    for (int i = 0; i < component_count; i++) {
-        components[i].visited = 0;
-        components[i].in_progress = 0;
-    }
-    
     Component* comp = find_component(name);
     if (!comp) return 0;
     
-    return detect_cycle_helper(comp);
+    // Create visited stack array
+    // 0 = not visited, 1 = in current path, 2 = fully processed
+    int* visited_stack = calloc(component_count, sizeof(int));
+    if (!visited_stack) {
+        fprintf(stderr, "Memory allocation failed\n");
+        return 1;  // Err on side of caution
+    }
+    
+    int has_cycle = detect_cycle_helper(comp, visited_stack);
+    
+    free(visited_stack);
+    return has_cycle;
 }
 
 // Main execution function
