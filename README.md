@@ -18,4 +18,8 @@ This is the report for OS Homework 2 - NYU Fall 25 by Prof. Kamen Yotov. The ass
 4. Test the error flow
 `./flow error.flow process_pipe`
 
-
+5. Test a list of test cases mentioned in the `your_tests.flow`.
+```
+chmod +x run_tests.sh
+./run_tests.sh
+```
