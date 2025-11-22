@@ -12,7 +12,7 @@ The **parallel_hashtable.c** program uses only five buckets in its hash table an
 
 During insertion, every thread writes to the **same shared hash table**, which means each thread updates the same underlying data structure. Because these threads operate without proper synchronization, they trigger **race conditions**, and some entries never make it into the hash table. The root cause of this incorrect behaviour is the **insert()** function, which accesses the shared resource:
 
-![Keys Lost](./images/keys_lost.png)
+![Keys Lost](./images/original_keys_lost.png)
 
 ```C
 bucket_entry * table[NUM_BUCKETS];
@@ -220,3 +220,5 @@ pthread_mutex_t mutex[NUM_BUCKETS];
 In parallel_mutex.c, we use one global mutex for inserting for the entire hash table.
 pthread_mutex_t mutex;
 ![Q5 SS](./images/pthread_mutex_opt.png)
+
+
