@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="420">
+<rect width="100%" height="100%" fill="white"/>
+<text x="360.0" y="28" text-anchor="middle" font-family="Arial" font-size="18">Hashtable Retrieved runtime vs. thread count</text>
+<line x1="60" y1="60" x2="60" y2="360" stroke="black" />
+<line x1="60" y1="360" x2="660" y2="360" stroke="black" />
+<text x="50" y="50" text-anchor="end" font-family="Arial" font-size="12">Time (s)</text>
+<text x="360.0" y="410" text-anchor="middle" font-family="Arial" font-size="12">Threads</text>
+<line x1="55" y1="360.0" x2="60" y2="360.0" stroke="black" />
+<text x="52" y="364.0" text-anchor="end" font-family="Arial" font-size="10">0.41</text>
+<line x1="60" y1="360.0" x2="660" y2="360.0" stroke="#ddd" />
+<line x1="55" y1="300.0" x2="60" y2="300.0" stroke="black" />
+<text x="52" y="304.0" text-anchor="end" font-family="Arial" font-size="10">1.44</text>
+<line x1="60" y1="300.0" x2="660" y2="300.0" stroke="#ddd" />
+<line x1="55" y1="240.0" x2="60" y2="240.0" stroke="black" />
+<text x="52" y="244.0" text-anchor="end" font-family="Arial" font-size="10">2.46</text>
+<line x1="60" y1="240.0" x2="660" y2="240.0" stroke="#ddd" />
+<line x1="55" y1="180.0" x2="60" y2="180.0" stroke="black" />
+<text x="52" y="184.0" text-anchor="end" font-family="Arial" font-size="10">3.49</text>
+<line x1="60" y1="180.0" x2="660" y2="180.0" stroke="#ddd" />
+<line x1="55" y1="120.0" x2="60" y2="120.0" stroke="black" />
+<text x="52" y="124.0" text-anchor="end" font-family="Arial" font-size="10">4.51</text>
+<line x1="60" y1="120.0" x2="660" y2="120.0" stroke="#ddd" />
+<line x1="55" y1="60.0" x2="60" y2="60.0" stroke="black" />
+<text x="52" y="64.0" text-anchor="end" font-family="Arial" font-size="10">5.54</text>
+<line x1="60" y1="60.0" x2="660" y2="60.0" stroke="#ddd" />
+<line x1="60.0" y1="360" x2="60.0" y2="365" stroke="black" />
+<text x="60.0" y="378" text-anchor="middle" font-family="Arial" font-size="10">1</text>
+<line x1="135.0" y1="360" x2="135.0" y2="365" stroke="black" />
+<text x="135.0" y="378" text-anchor="middle" font-family="Arial" font-size="10">2</text>
+<line x1="210.0" y1="360" x2="210.0" y2="365" stroke="black" />
+<text x="210.0" y="378" text-anchor="middle" font-family="Arial" font-size="10">4</text>
+<line x1="285.0" y1="360" x2="285.0" y2="365" stroke="black" />
+<text x="285.0" y="378" text-anchor="middle" font-family="Arial" font-size="10">8</text>
+<line x1="360.0" y1="360" x2="360.0" y2="365" stroke="black" />
+<text x="360.0" y="378" text-anchor="middle" font-family="Arial" font-size="10">16</text>
+<line x1="435.0" y1="360" x2="435.0" y2="365" stroke="black" />
+<text x="435.0" y="378" text-anchor="middle" font-family="Arial" font-size="10">32</text>
+<line x1="510.0" y1="360" x2="510.0" y2="365" stroke="black" />
+<text x="510.0" y="378" text-anchor="middle" font-family="Arial" font-size="10">64</text>
+<line x1="585.0" y1="360" x2="585.0" y2="365" stroke="black" />
+<text x="585.0" y="378" text-anchor="middle" font-family="Arial" font-size="10">128</text>
+<line x1="660.0" y1="360" x2="660.0" y2="365" stroke="black" />
+<text x="660.0" y="378" text-anchor="middle" font-family="Arial" font-size="10">256</text>
+<polyline fill="none" stroke="#1f77b4" stroke-width="2" points="60.0,60.0 135.0,236.8 210.0,313.6 285.0,348.0 360.0,357.8 435.0,358.6 510.0,360.0 585.0,358.9 660.0,356.7"/>
+
+<polyline fill="none" stroke="#d62728" stroke-width="2" points="60.0,70.4 135.0,232.3 210.0,307.9 285.0,346.0 360.0,356.5 435.0,353.4 510.0,351.1 585.0,350.8 660.0,354.3"/>
+
+<circle cx="60.0" cy="60.0" r="4" fill="#1f77b4"/>
+<circle cx="135.0" cy="236.8" r="4" fill="#1f77b4"/>
+<circle cx="210.0" cy="313.6" r="4" fill="#1f77b4"/>
+<circle cx="285.0" cy="348.0" r="4" fill="#1f77b4"/>
+<circle cx="360.0" cy="357.8" r="4" fill="#1f77b4"/>
+<circle cx="435.0" cy="358.6" r="4" fill="#1f77b4"/>
+<circle cx="510.0" cy="360.0" r="4" fill="#1f77b4"/>
+<circle cx="585.0" cy="358.9" r="4" fill="#1f77b4"/>
+<circle cx="660.0" cy="356.7" r="4" fill="#1f77b4"/>
+<circle cx="60.0" cy="70.4" r="4" fill="#d62728"/>
+<circle cx="135.0" cy="232.3" r="4" fill="#d62728"/>
+<circle cx="210.0" cy="307.9" r="4" fill="#d62728"/>
+<circle cx="285.0" cy="346.0" r="4" fill="#d62728"/>
+<circle cx="360.0" cy="356.5" r="4" fill="#d62728"/>
+<circle cx="435.0" cy="353.4" r="4" fill="#d62728"/>
+<circle cx="510.0" cy="351.1" r="4" fill="#d62728"/>
+<circle cx="585.0" cy="350.8" r="4" fill="#d62728"/>
+<circle cx="660.0" cy="354.3" r="4" fill="#d62728"/>
+<rect x="490" y="60" width="170" height="50" fill="white" stroke="black"/>
+<line x1="500" y1="75" x2="520" y2="75" stroke="#1f77b4" stroke-width="2"/>
+<text x="530" y="79" font-family="Arial" font-size="12">Original (unsafe)</text>
+<line x1="500" y1="95" x2="520" y2="95" stroke="#d62728" stroke-width="2"/>
+<text x="530" y="99" font-family="Arial" font-size="12">Mutex</text>
+</svg>

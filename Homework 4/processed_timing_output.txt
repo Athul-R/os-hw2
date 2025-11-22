@@ -1,0 +1,54 @@
+--- original t=1 ---
+[main] Inserted 100000 keys in 0.005110 seconds
+[main] Retrieved 100000/100000 keys in 5.537330 seconds
+--- mutex t=1 ---
+[main] Inserted 100000 keys in 0.007758 seconds
+[main] Retrieved 100000/100000 keys in 5.360113 seconds
+--- original t=2 ---
+[main] Inserted 100000 keys in 0.004284 seconds
+[main] Retrieved 88923/100000 keys in 2.516829 seconds
+--- mutex t=2 ---
+[main] Inserted 100000 keys in 0.014059 seconds
+[main] Retrieved 100000/100000 keys in 2.593512 seconds
+--- original t=4 ---
+[main] Inserted 100000 keys in 0.003564 seconds
+[main] Retrieved 80190/100000 keys in 1.205629 seconds
+--- mutex t=4 ---
+[main] Inserted 100000 keys in 0.021524 seconds
+[main] Retrieved 100000/100000 keys in 1.302376 seconds
+--- original t=8 ---
+[main] Inserted 100000 keys in 0.002563 seconds
+[main] Retrieved 61350/100000 keys in 0.617733 seconds
+--- mutex t=8 ---
+[main] Inserted 100000 keys in 0.024176 seconds
+[main] Retrieved 100000/100000 keys in 0.651315 seconds
+--- original t=16 ---
+[main] Inserted 100000 keys in 0.002439 seconds
+[main] Retrieved 57551/100000 keys in 0.449455 seconds
+--- mutex t=16 ---
+[main] Inserted 100000 keys in 0.023573 seconds
+[main] Retrieved 100000/100000 keys in 0.472166 seconds
+--- original t=32 ---
+[main] Inserted 100000 keys in 0.002243 seconds
+[main] Retrieved 54070/100000 keys in 0.436435 seconds
+--- mutex t=32 ---
+[main] Inserted 100000 keys in 0.023370 seconds
+[main] Retrieved 100000/100000 keys in 0.524325 seconds
+--- original t=64 ---
+[main] Inserted 100000 keys in 0.002771 seconds
+[main] Retrieved 57626/100000 keys in 0.412073 seconds
+--- mutex t=64 ---
+[main] Inserted 100000 keys in 0.022844 seconds
+[main] Retrieved 100000/100000 keys in 0.563330 seconds
+--- original t=128 ---
+[main] Inserted 100000 keys in 0.003493 seconds
+[main] Retrieved 66322/100000 keys in 0.431662 seconds
+--- mutex t=128 ---
+[main] Inserted 100000 keys in 0.025407 seconds
+[main] Retrieved 100000/100000 keys in 0.568757 seconds
+--- original t=256 ---
+[main] Inserted 100000 keys in 0.006025 seconds
+[main] Retrieved 83450/100000 keys in 0.468034 seconds
+--- mutex t=256 ---
+[main] Inserted 100000 keys in 0.025037 seconds
+[main] Retrieved 100000/100000 keys in 0.508867 seconds
