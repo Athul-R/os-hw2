@@ -1,0 +1,1614 @@
+--- original t=1 ---
+[main] Inserted 100000 keys in 0.004718 seconds
+[thread 0] 0 keys lost!
+[main] Retrieved 100000/100000 keys in 7.326611 seconds
+--- mutex t=1 ---
+[main] Inserted 100000 keys in 0.005621 seconds
+[thread 0] 0 keys lost!
+[main] Retrieved 100000/100000 keys in 7.280426 seconds
+--- spinlock t=1 ---
+[Athul R - ar6316][main] Inserted 100000 keys in 0.005131 seconds
+[Athul R - ar6316][thread 0] 0 keys lost!
+[Athul R - ar6316][main] Retrieved 100000/100000 keys in 7.195530 seconds
+--- original t=2 ---
+[main] Inserted 100000 keys in 0.011627 seconds
+[thread 0] 20 keys lost!
+[thread 1] 24 keys lost!
+[main] Retrieved 99956/100000 keys in 3.772445 seconds
+--- mutex t=2 ---
+[main] Inserted 100000 keys in 0.005956 seconds
+[thread 0] 0 keys lost!
+[thread 1] 0 keys lost!
+[main] Retrieved 100000/100000 keys in 3.732834 seconds
+--- spinlock t=2 ---
+[Athul R - ar6316][main] Inserted 100000 keys in 0.004447 seconds
+[Athul R - ar6316][thread 0] 0 keys lost!
+[Athul R - ar6316][thread 1] 0 keys lost!
+[Athul R - ar6316][main] Retrieved 100000/100000 keys in 3.503208 seconds
+--- original t=4 ---
+[main] Inserted 100000 keys in 0.004033 seconds
+[thread 3] 21 keys lost!
+[thread 2] 22 keys lost!
+[thread 0] 9 keys lost!
+[thread 1] 11 keys lost!
+[main] Retrieved 99937/100000 keys in 3.507679 seconds
+--- mutex t=4 ---
+[main] Inserted 100000 keys in 0.005780 seconds
+[thread 3] 0 keys lost!
+[thread 1] 0 keys lost!
+[thread 0] 0 keys lost!
+[thread 2] 0 keys lost!
+[main] Retrieved 100000/100000 keys in 3.456019 seconds
+--- spinlock t=4 ---
+[Athul R - ar6316][main] Inserted 100000 keys in 0.006911 seconds
+[Athul R - ar6316][thread 3] 0 keys lost!
+[Athul R - ar6316][thread 1] 0 keys lost!
+[Athul R - ar6316][thread 2] 0 keys lost!
+[Athul R - ar6316][thread 0] 0 keys lost!
+[Athul R - ar6316][main] Retrieved 100000/100000 keys in 3.682718 seconds
+--- original t=8 ---
+[main] Inserted 100000 keys in 0.004788 seconds
+[thread 3] 4 keys lost!
+[thread 7] 12 keys lost!
+[thread 4] 11 keys lost!
+[thread 1] 6 keys lost!
+[thread 5] 7 keys lost!
+[thread 6] 12 keys lost!
+[thread 2] 8 keys lost!
+[thread 0] 7 keys lost!
+[main] Retrieved 99933/100000 keys in 3.783064 seconds
+--- mutex t=8 ---
+[main] Inserted 100000 keys in 0.005870 seconds
+[thread 2] 0 keys lost!
+[thread 5] 0 keys lost!
+[thread 3] 0 keys lost!
+[thread 4] 0 keys lost!
+[thread 7] 0 keys lost!
+[thread 6] 0 keys lost!
+[thread 1] 0 keys lost!
+[thread 0] 0 keys lost!
+[main] Retrieved 100000/100000 keys in 3.523767 seconds
+--- spinlock t=8 ---
+[Athul R - ar6316][main] Inserted 100000 keys in 0.007104 seconds
+[Athul R - ar6316][thread 7] 0 keys lost!
+[Athul R - ar6316][thread 3] 0 keys lost!
+[Athul R - ar6316][thread 6] 0 keys lost!
+[Athul R - ar6316][thread 5] 0 keys lost!
+[Athul R - ar6316][thread 4] 0 keys lost!
+[Athul R - ar6316][thread 1] 0 keys lost!
+[Athul R - ar6316][thread 2] 0 keys lost!
+[Athul R - ar6316][thread 0] 0 keys lost!
+[Athul R - ar6316][main] Retrieved 100000/100000 keys in 3.886668 seconds
+--- original t=16 ---
+[main] Inserted 100000 keys in 0.007960 seconds
+[thread 9] 0 keys lost!
+[thread 6] 0 keys lost!
+[thread 5] 3 keys lost!
+[thread 4] 2 keys lost!
+[thread 15] 0 keys lost!
+[thread 12] 0 keys lost!
+[thread 14] 0 keys lost!
+[thread 8] 0 keys lost!
+[thread 13] 0 keys lost!
+[thread 10] 1 keys lost!
+[thread 11] 2 keys lost!
+[thread 3] 6 keys lost!
+[thread 7] 1 keys lost!
+[thread 2] 3 keys lost!
+[thread 0] 0 keys lost!
+[thread 1] 5 keys lost!
+[main] Retrieved 99977/100000 keys in 3.886744 seconds
+--- mutex t=16 ---
+[main] Inserted 100000 keys in 0.007462 seconds
+[thread 3] 0 keys lost!
+[thread 10] 0 keys lost!
+[thread 7] 0 keys lost!
+[thread 15] 0 keys lost!
+[thread 2] 0 keys lost!
+[thread 13] 0 keys lost!
+[thread 6] 0 keys lost!
+[thread 5] 0 keys lost!
+[thread 14] 0 keys lost!
+[thread 9] 0 keys lost!
+[thread 11] 0 keys lost!
+[thread 12] 0 keys lost!
+[thread 4] 0 keys lost!
+[thread 8] 0 keys lost!
+[thread 0] 0 keys lost!
+[thread 1] 0 keys lost!
+[main] Retrieved 100000/100000 keys in 3.778744 seconds
+--- spinlock t=16 ---
+[Athul R - ar6316][main] Inserted 100000 keys in 0.004990 seconds
+[Athul R - ar6316][thread 15] 0 keys lost!
+[Athul R - ar6316][thread 14] 0 keys lost!
+[Athul R - ar6316][thread 13] 0 keys lost!
+[Athul R - ar6316][thread 12] 0 keys lost!
+[Athul R - ar6316][thread 3] 0 keys lost!
+[Athul R - ar6316][thread 10] 0 keys lost!
+[Athul R - ar6316][thread 11] 0 keys lost!
+[Athul R - ar6316][thread 7] 0 keys lost!
+[Athul R - ar6316][thread 9] 0 keys lost!
+[Athul R - ar6316][thread 1] 0 keys lost!
+[Athul R - ar6316][thread 5] 0 keys lost!
+[Athul R - ar6316][thread 2] 0 keys lost!
+[Athul R - ar6316][thread 8] 0 keys lost!
+[Athul R - ar6316][thread 4] 0 keys lost!
+[Athul R - ar6316][thread 6] 0 keys lost!
+[Athul R - ar6316][thread 0] 0 keys lost!
+[Athul R - ar6316][main] Retrieved 100000/100000 keys in 3.702397 seconds
+--- original t=32 ---
+[main] Inserted 100000 keys in 0.006355 seconds
+[thread 20] 0 keys lost!
+[thread 22] 0 keys lost!
+[thread 21] 0 keys lost!
+[thread 24] 0 keys lost!
+[thread 23] 0 keys lost!
+[thread 25] 1 keys lost!
+[thread 31] 3 keys lost!
+[thread 30] 0 keys lost!
+[thread 28] 4 keys lost!
+[thread 29] 1 keys lost!
+[thread 27] 4 keys lost!
+[thread 26] 0 keys lost!
+[thread 16] 4 keys lost!
+[thread 19] 2 keys lost!
+[thread 15] 0 keys lost!
+[thread 18] 2 keys lost!
+[thread 17] 0 keys lost!
+[thread 13] 0 keys lost!
+[thread 14] 3 keys lost!
+[thread 6] 1 keys lost!
+[thread 12] 1 keys lost!
+[thread 9] 4 keys lost!
+[thread 10] 3 keys lost!
+[thread 8] 1 keys lost!
+[thread 11] 4 keys lost!
+[thread 4] 2 keys lost!
+[thread 3] 0 keys lost!
+[thread 7] 2 keys lost!
+[thread 0] 2 keys lost!
+[thread 5] 1 keys lost!
+[thread 2] 0 keys lost!
+[thread 1] 5 keys lost!
+[main] Retrieved 99950/100000 keys in 3.613625 seconds
+--- mutex t=32 ---
+[main] Inserted 100000 keys in 0.012390 seconds
+[thread 31] 0 keys lost!
+[thread 30] 0 keys lost!
+[thread 6] 0 keys lost!
+[thread 17] 0 keys lost!
+[thread 16] 0 keys lost!
+[thread 15] 0 keys lost!
+[thread 14] 0 keys lost!
+[thread 13] 0 keys lost!
+[thread 12] 0 keys lost!
+[thread 19] 0 keys lost!
+[thread 20] 0 keys lost!
+[thread 11] 0 keys lost!
+[thread 10] 0 keys lost!
+[thread 9] 0 keys lost!
+[thread 8] 0 keys lost!
+[thread 7] 0 keys lost!
+[thread 21] 0 keys lost!
+[thread 28] 0 keys lost!
+[thread 27] 0 keys lost!
+[thread 26] 0 keys lost!
+[thread 25] 0 keys lost!
+[thread 24] 0 keys lost!
+[thread 23] 0 keys lost!
+[thread 22] 0 keys lost!
+[thread 29] 0 keys lost!
+[thread 5] 0 keys lost!
+[thread 2] 0 keys lost!
+[thread 1] 0 keys lost!
+[thread 18] 0 keys lost!
+[thread 3] 0 keys lost!
+[thread 4] 0 keys lost!
+[thread 0] 0 keys lost!
+[main] Retrieved 100000/100000 keys in 4.043958 seconds
+--- spinlock t=32 ---
+[Athul R - ar6316][main] Inserted 100000 keys in 0.007007 seconds
+[Athul R - ar6316][thread 31] 0 keys lost!
+[Athul R - ar6316][thread 30] 0 keys lost!
+[Athul R - ar6316][thread 25] 0 keys lost!
+[Athul R - ar6316][thread 29] 0 keys lost!
+[Athul R - ar6316][thread 22] 0 keys lost!
+[Athul R - ar6316][thread 27] 0 keys lost!
+[Athul R - ar6316][thread 20] 0 keys lost!
+[Athul R - ar6316][thread 28] 0 keys lost!
+[Athul R - ar6316][thread 14] 0 keys lost!
+[Athul R - ar6316][thread 26] 0 keys lost!
+[Athul R - ar6316][thread 19] 0 keys lost!
+[Athul R - ar6316][thread 16] 0 keys lost!
+[Athul R - ar6316][thread 24] 0 keys lost!
+[Athul R - ar6316][thread 23] 0 keys lost!
+[Athul R - ar6316][thread 21] 0 keys lost!
+[Athul R - ar6316][thread 9] 0 keys lost!
+[Athul R - ar6316][thread 12] 0 keys lost!
+[Athul R - ar6316][thread 18] 0 keys lost!
+[Athul R - ar6316][thread 17] 0 keys lost!
+[Athul R - ar6316][thread 15] 0 keys lost!
+[Athul R - ar6316][thread 13] 0 keys lost!
+[Athul R - ar6316][thread 11] 0 keys lost!
+[Athul R - ar6316][thread 10] 0 keys lost!
+[Athul R - ar6316][thread 8] 0 keys lost!
+[Athul R - ar6316][thread 3] 0 keys lost!
+[Athul R - ar6316][thread 7] 0 keys lost!
+[Athul R - ar6316][thread 5] 0 keys lost!
+[Athul R - ar6316][thread 4] 0 keys lost!
+[Athul R - ar6316][thread 6] 0 keys lost!
+[Athul R - ar6316][thread 2] 0 keys lost!
+[Athul R - ar6316][thread 0] 0 keys lost!
+[Athul R - ar6316][thread 1] 0 keys lost!
+[Athul R - ar6316][main] Retrieved 100000/100000 keys in 3.698871 seconds
+--- original t=64 ---
+[main] Inserted 100000 keys in 0.015267 seconds
+[thread 27] 17 keys lost!
+[thread 42] 0 keys lost!
+[thread 10] 36 keys lost!
+[thread 60] 22 keys lost!
+[thread 36] 0 keys lost!
+[thread 24] 48 keys lost!
+[thread 44] 2 keys lost!
+[thread 43] 11 keys lost!
+[thread 19] 68 keys lost!
+[thread 25] 18 keys lost!
+[thread 21] 22 keys lost!
+[thread 18] 16 keys lost!
+[thread 3] 0 keys lost!
+[thread 47] 5 keys lost!
+[thread 62] 27 keys lost!
+[thread 9] 35 keys lost!
+[thread 23] 47 keys lost!
+[thread 28] 72 keys lost!
+[thread 16] 26 keys lost!
+[thread 29] 27 keys lost!
+[thread 63] 27 keys lost!
+[thread 59] 0 keys lost!
+[thread 41] 2 keys lost!
+[thread 39] 63 keys lost!
+[thread 45] 72 keys lost!
+[thread 54] 0 keys lost!
+[thread 38] 0 keys lost!
+[thread 30] 1 keys lost!
+[thread 26] 10 keys lost!
+[thread 20] 2 keys lost!
+[thread 32] 30 keys lost!
+[thread 35] 0 keys lost!
+[thread 6] 0 keys lost!
+[thread 22] 3 keys lost!
+[thread 46] 2 keys lost!
+[thread 51] 0 keys lost!
+[thread 58] 1 keys lost!
+[thread 17] 0 keys lost!
+[thread 55] 0 keys lost!
+[thread 31] 0 keys lost!
+[thread 57] 0 keys lost!
+[thread 34] 0 keys lost!
+[thread 52] 0 keys lost!
+[thread 48] 0 keys lost!
+[thread 53] 0 keys lost!
+[thread 15] 0 keys lost!
+[thread 14] 0 keys lost!
+[thread 11] 0 keys lost!
+[thread 61] 0 keys lost!
+[thread 13] 0 keys lost!
+[thread 12] 0 keys lost!
+[thread 8] 2 keys lost!
+[thread 40] 0 keys lost!
+[thread 50] 0 keys lost!
+[thread 56] 0 keys lost!
+[thread 49] 0 keys lost!
+[thread 2] 0 keys lost!
+[thread 5] 0 keys lost!
+[thread 4] 0 keys lost!
+[thread 1] 0 keys lost!
+[thread 7] 0 keys lost!
+[thread 33] 0 keys lost!
+[thread 0] 0 keys lost!
+[thread 37] 0 keys lost!
+[main] Retrieved 99286/100000 keys in 3.887464 seconds
+--- mutex t=64 ---
+[main] Inserted 100000 keys in 0.011220 seconds
+[thread 63] 0 keys lost!
+[thread 60] 0 keys lost!
+[thread 62] 0 keys lost!
+[thread 61] 0 keys lost!
+[thread 57] 0 keys lost!
+[thread 59] 0 keys lost!
+[thread 58] 0 keys lost!
+[thread 56] 0 keys lost!
+[thread 53] 0 keys lost!
+[thread 55] 0 keys lost!
+[thread 54] 0 keys lost!
+[thread 52] 0 keys lost!
+[thread 48] 0 keys lost!
+[thread 45] 0 keys lost!
+[thread 51] 0 keys lost!
+[thread 44] 0 keys lost!
+[thread 46] 0 keys lost!
+[thread 43] 0 keys lost!
+[thread 36] 0 keys lost!
+[thread 42] 0 keys lost!
+[thread 41] 0 keys lost!
+[thread 50] 0 keys lost!
+[thread 40] 0 keys lost!
+[thread 49] 0 keys lost!
+[thread 47] 0 keys lost!
+[thread 39] 0 keys lost!
+[thread 38] 0 keys lost!
+[thread 37] 0 keys lost!
+[thread 31] 0 keys lost!
+[thread 30] 0 keys lost!
+[thread 32] 0 keys lost!
+[thread 34] 0 keys lost!
+[thread 35] 0 keys lost!
+[thread 29] 0 keys lost!
+[thread 25] 0 keys lost!
+[thread 24] 0 keys lost!
+[thread 28] 0 keys lost!
+[thread 33] 0 keys lost!
+[thread 20] 0 keys lost!
+[thread 27] 0 keys lost!
+[thread 18] 0 keys lost!
+[thread 26] 0 keys lost!
+[thread 15] 0 keys lost!
+[thread 6] 0 keys lost!
+[thread 14] 0 keys lost!
+[thread 5] 0 keys lost!
+[thread 21] 0 keys lost!
+[thread 19] 0 keys lost!
+[thread 22] 0 keys lost!
+[thread 13] 0 keys lost!
+[thread 17] 0 keys lost!
+[thread 12] 0 keys lost!
+[thread 3] 0 keys lost!
+[thread 23] 0 keys lost!
+[thread 16] 0 keys lost!
+[thread 7] 0 keys lost!
+[thread 11] 0 keys lost!
+[thread 0] 0 keys lost!
+[thread 10] 0 keys lost!
+[thread 1] 0 keys lost!
+[thread 2] 0 keys lost!
+[thread 9] 0 keys lost!
+[thread 4] 0 keys lost!
+[thread 8] 0 keys lost!
+[main] Retrieved 100000/100000 keys in 3.770516 seconds
+--- spinlock t=64 ---
+[Athul R - ar6316][main] Inserted 100000 keys in 0.009787 seconds
+[Athul R - ar6316][thread 56] 0 keys lost!
+[Athul R - ar6316][thread 57] 0 keys lost!
+[Athul R - ar6316][thread 52] 0 keys lost!
+[Athul R - ar6316][thread 54] 0 keys lost!
+[Athul R - ar6316][thread 53] 0 keys lost!
+[Athul R - ar6316][thread 55] 0 keys lost!
+[Athul R - ar6316][thread 60] 0 keys lost!
+[Athul R - ar6316][thread 51] 0 keys lost!
+[Athul R - ar6316][thread 46] 0 keys lost!
+[Athul R - ar6316][thread 47] 0 keys lost!
+[Athul R - ar6316][thread 50] 0 keys lost!
+[Athul R - ar6316][thread 63] 0 keys lost!
+[Athul R - ar6316][thread 44] 0 keys lost!
+[Athul R - ar6316][thread 45] 0 keys lost!
+[Athul R - ar6316][thread 48] 0 keys lost!
+[Athul R - ar6316][thread 49] 0 keys lost!
+[Athul R - ar6316][thread 62] 0 keys lost!
+[Athul R - ar6316][thread 61] 0 keys lost!
+[Athul R - ar6316][thread 41] 0 keys lost!
+[Athul R - ar6316][thread 43] 0 keys lost!
+[Athul R - ar6316][thread 42] 0 keys lost!
+[Athul R - ar6316][thread 59] 0 keys lost!
+[Athul R - ar6316][thread 38] 0 keys lost!
+[Athul R - ar6316][thread 58] 0 keys lost!
+[Athul R - ar6316][thread 39] 0 keys lost!
+[Athul R - ar6316][thread 35] 0 keys lost!
+[Athul R - ar6316][thread 37] 0 keys lost!
+[Athul R - ar6316][thread 40] 0 keys lost!
+[Athul R - ar6316][thread 34] 0 keys lost!
+[Athul R - ar6316][thread 36] 0 keys lost!
+[Athul R - ar6316][thread 29] 0 keys lost!
+[Athul R - ar6316][thread 33] 0 keys lost!
+[Athul R - ar6316][thread 28] 0 keys lost!
+[Athul R - ar6316][thread 30] 0 keys lost!
+[Athul R - ar6316][thread 32] 0 keys lost!
+[Athul R - ar6316][thread 27] 0 keys lost!
+[Athul R - ar6316][thread 31] 0 keys lost!
+[Athul R - ar6316][thread 24] 0 keys lost!
+[Athul R - ar6316][thread 25] 0 keys lost!
+[Athul R - ar6316][thread 26] 0 keys lost!
+[Athul R - ar6316][thread 13] 0 keys lost!
+[Athul R - ar6316][thread 23] 0 keys lost!
+[Athul R - ar6316][thread 22] 0 keys lost!
+[Athul R - ar6316][thread 19] 0 keys lost!
+[Athul R - ar6316][thread 14] 0 keys lost!
+[Athul R - ar6316][thread 21] 0 keys lost!
+[Athul R - ar6316][thread 20] 0 keys lost!
+[Athul R - ar6316][thread 18] 0 keys lost!
+[Athul R - ar6316][thread 12] 0 keys lost!
+[Athul R - ar6316][thread 10] 0 keys lost!
+[Athul R - ar6316][thread 17] 0 keys lost!
+[Athul R - ar6316][thread 11] 0 keys lost!
+[Athul R - ar6316][thread 16] 0 keys lost!
+[Athul R - ar6316][thread 8] 0 keys lost!
+[Athul R - ar6316][thread 6] 0 keys lost!
+[Athul R - ar6316][thread 15] 0 keys lost!
+[Athul R - ar6316][thread 9] 0 keys lost!
+[Athul R - ar6316][thread 7] 0 keys lost!
+[Athul R - ar6316][thread 5] 0 keys lost!
+[Athul R - ar6316][thread 3] 0 keys lost!
+[Athul R - ar6316][thread 0] 0 keys lost!
+[Athul R - ar6316][thread 2] 0 keys lost!
+[Athul R - ar6316][thread 4] 0 keys lost!
+[Athul R - ar6316][thread 1] 0 keys lost!
+[Athul R - ar6316][main] Retrieved 100000/100000 keys in 4.185800 seconds
+--- original t=128 ---
+[main] Inserted 100000 keys in 0.014045 seconds
+[thread 120] 0 keys lost!
+[thread 125] 0 keys lost!
+[thread 126] 0 keys lost!
+[thread 127] 0 keys lost!
+[thread 122] 0 keys lost!
+[thread 123] 0 keys lost!
+[thread 121] 0 keys lost!
+[thread 124] 0 keys lost!
+[thread 119] 0 keys lost!
+[thread 118] 0 keys lost!
+[thread 116] 0 keys lost!
+[thread 117] 0 keys lost!
+[thread 114] 0 keys lost!
+[thread 112] 1 keys lost!
+[thread 115] 2 keys lost!
+[thread 111] 0 keys lost!
+[thread 113] 0 keys lost!
+[thread 107] 0 keys lost!
+[thread 110] 0 keys lost!
+[thread 106] 3 keys lost!
+[thread 109] 0 keys lost!
+[thread 103] 0 keys lost!
+[thread 105] 0 keys lost!
+[thread 101] 0 keys lost!
+[thread 102] 0 keys lost!
+[thread 108] 0 keys lost!
+[thread 104] 0 keys lost!
+[thread 100] 0 keys lost!
+[thread 99] 1 keys lost!
+[thread 98] 0 keys lost!
+[thread 96] 0 keys lost!
+[thread 97] 1 keys lost!
+[thread 95] 0 keys lost!
+[thread 91] 0 keys lost!
+[thread 90] 0 keys lost!
+[thread 94] 0 keys lost!
+[thread 93] 0 keys lost!
+[thread 88] 0 keys lost!
+[thread 89] 0 keys lost!
+[thread 92] 0 keys lost!
+[thread 86] 0 keys lost!
+[thread 82] 0 keys lost!
+[thread 81] 1 keys lost!
+[thread 87] 0 keys lost!
+[thread 83] 0 keys lost!
+[thread 84] 1 keys lost!
+[thread 85] 0 keys lost!
+[thread 79] 0 keys lost!
+[thread 80] 0 keys lost!
+[thread 78] 0 keys lost!
+[thread 77] 0 keys lost!
+[thread 73] 0 keys lost!
+[thread 74] 2 keys lost!
+[thread 71] 0 keys lost!
+[thread 76] 0 keys lost!
+[thread 66] 0 keys lost!
+[thread 75] 0 keys lost!
+[thread 69] 0 keys lost!
+[thread 70] 0 keys lost!
+[thread 72] 1 keys lost!
+[thread 67] 0 keys lost!
+[thread 63] 0 keys lost!
+[thread 68] 0 keys lost!
+[thread 60] 0 keys lost!
+[thread 64] 0 keys lost!
+[thread 65] 0 keys lost!
+[thread 61] 0 keys lost!
+[thread 58] 0 keys lost!
+[thread 59] 0 keys lost!
+[thread 62] 0 keys lost!
+[thread 47] 0 keys lost!
+[thread 55] 0 keys lost!
+[thread 53] 0 keys lost!
+[thread 57] 0 keys lost!
+[thread 49] 0 keys lost!
+[thread 52] 0 keys lost!
+[thread 46] 0 keys lost!
+[thread 48] 0 keys lost!
+[thread 50] 0 keys lost!
+[thread 51] 0 keys lost!
+[thread 56] 0 keys lost!
+[thread 54] 0 keys lost!
+[thread 43] 0 keys lost!
+[thread 44] 148 keys lost!
+[thread 38] 0 keys lost!
+[thread 42] 0 keys lost!
+[thread 29] 1 keys lost!
+[thread 45] 160 keys lost!
+[thread 36] 0 keys lost!
+[thread 20] 0 keys lost!
+[thread 41] 67 keys lost!
+[thread 40] 0 keys lost!
+[thread 39] 0 keys lost!
+[thread 35] 0 keys lost!
+[thread 37] 0 keys lost!
+[thread 32] 1 keys lost!
+[thread 34] 0 keys lost!
+[thread 30] 0 keys lost!
+[thread 28] 0 keys lost!
+[thread 33] 1 keys lost!
+[thread 19] 1 keys lost!
+[thread 15] 0 keys lost!
+[thread 31] 0 keys lost!
+[thread 27] 0 keys lost!
+[thread 25] 0 keys lost!
+[thread 26] 0 keys lost!
+[thread 23] 0 keys lost!
+[thread 22] 0 keys lost!
+[thread 13] 0 keys lost!
+[thread 24] 0 keys lost!
+[thread 21] 0 keys lost!
+[thread 16] 0 keys lost!
+[thread 14] 0 keys lost!
+[thread 12] 0 keys lost!
+[thread 17] 0 keys lost!
+[thread 18] 0 keys lost!
+[thread 11] 0 keys lost!
+[thread 2] 0 keys lost!
+[thread 10] 0 keys lost!
+[thread 7] 0 keys lost!
+[thread 8] 0 keys lost!
+[thread 6] 0 keys lost!
+[thread 5] 1 keys lost!
+[thread 1] 0 keys lost!
+[thread 9] 0 keys lost!
+[thread 4] 1 keys lost!
+[thread 3] 0 keys lost!
+[thread 0] 1 keys lost!
+[main] Retrieved 99605/100000 keys in 3.945511 seconds
+--- mutex t=128 ---
+[main] Inserted 100000 keys in 0.014353 seconds
+[thread 124] 0 keys lost!
+[thread 125] 0 keys lost!
+[thread 126] 0 keys lost!
+[thread 127] 0 keys lost!
+[thread 120] 0 keys lost!
+[thread 121] 0 keys lost!
+[thread 123] 0 keys lost!
+[thread 118] 0 keys lost!
+[thread 122] 0 keys lost!
+[thread 119] 0 keys lost!
+[thread 117] 0 keys lost!
+[thread 116] 0 keys lost!
+[thread 115] 0 keys lost!
+[thread 114] 0 keys lost!
+[thread 112] 0 keys lost!
+[thread 111] 0 keys lost!
+[thread 113] 0 keys lost!
+[thread 109] 0 keys lost!
+[thread 110] 0 keys lost!
+[thread 108] 0 keys lost!
+[thread 107] 0 keys lost!
+[thread 106] 0 keys lost!
+[thread 105] 0 keys lost!
+[thread 104] 0 keys lost!
+[thread 102] 0 keys lost!
+[thread 100] 0 keys lost!
+[thread 103] 0 keys lost!
+[thread 99] 0 keys lost!
+[thread 97] 0 keys lost!
+[thread 98] 0 keys lost!
+[thread 96] 0 keys lost!
+[thread 101] 0 keys lost!
+[thread 93] 0 keys lost!
+[thread 94] 0 keys lost!
+[thread 95] 0 keys lost!
+[thread 90] 0 keys lost!
+[thread 88] 0 keys lost!
+[thread 92] 0 keys lost!
+[thread 91] 0 keys lost!
+[thread 85] 0 keys lost!
+[thread 89] 0 keys lost!
+[thread 87] 0 keys lost!
+[thread 84] 0 keys lost!
+[thread 86] 0 keys lost!
+[thread 83] 0 keys lost!
+[thread 81] 0 keys lost!
+[thread 82] 0 keys lost!
+[thread 79] 0 keys lost!
+[thread 78] 0 keys lost!
+[thread 80] 0 keys lost!
+[thread 77] 0 keys lost!
+[thread 73] 0 keys lost!
+[thread 71] 0 keys lost!
+[thread 76] 0 keys lost!
+[thread 75] 0 keys lost!
+[thread 74] 0 keys lost!
+[thread 72] 0 keys lost!
+[thread 67] 0 keys lost!
+[thread 65] 0 keys lost!
+[thread 70] 0 keys lost!
+[thread 68] 0 keys lost!
+[thread 66] 0 keys lost!
+[thread 69] 0 keys lost!
+[thread 32] 0 keys lost!
+[thread 42] 0 keys lost!
+[thread 60] 0 keys lost!
+[thread 47] 0 keys lost!
+[thread 59] 0 keys lost!
+[thread 51] 0 keys lost!
+[thread 11] 0 keys lost!
+[thread 64] 0 keys lost!
+[thread 62] 0 keys lost!
+[thread 63] 0 keys lost!
+[thread 52] 0 keys lost!
+[thread 58] 0 keys lost!
+[thread 33] 0 keys lost!
+[thread 41] 0 keys lost!
+[thread 44] 0 keys lost!
+[thread 57] 0 keys lost!
+[thread 61] 0 keys lost!
+[thread 49] 0 keys lost!
+[thread 56] 0 keys lost!
+[thread 55] 0 keys lost!
+[thread 48] 0 keys lost!
+[thread 45] 0 keys lost!
+[thread 46] 0 keys lost!
+[thread 53] 0 keys lost!
+[thread 54] 0 keys lost!
+[thread 40] 0 keys lost!
+[thread 35] 0 keys lost!
+[thread 50] 0 keys lost!
+[thread 43] 0 keys lost!
+[thread 38] 0 keys lost!
+[thread 31] 0 keys lost!
+[thread 36] 0 keys lost!
+[thread 26] 0 keys lost!
+[thread 37] 0 keys lost!
+[thread 39] 0 keys lost!
+[thread 34] 0 keys lost!
+[thread 28] 0 keys lost!
+[thread 18] 0 keys lost!
+[thread 29] 0 keys lost!
+[thread 21] 0 keys lost!
+[thread 24] 0 keys lost!
+[thread 27] 0 keys lost!
+[thread 30] 0 keys lost!
+[thread 25] 0 keys lost!
+[thread 23] 0 keys lost!
+[thread 16] 0 keys lost!
+[thread 19] 0 keys lost!
+[thread 22] 0 keys lost!
+[thread 20] 0 keys lost!
+[thread 15] 0 keys lost!
+[thread 13] 0 keys lost!
+[thread 17] 0 keys lost!
+[thread 14] 0 keys lost!
+[thread 4] 0 keys lost!
+[thread 3] 0 keys lost!
+[thread 7] 0 keys lost!
+[thread 12] 0 keys lost!
+[thread 5] 0 keys lost!
+[thread 0] 0 keys lost!
+[thread 6] 0 keys lost!
+[thread 1] 0 keys lost!
+[thread 2] 0 keys lost!
+[thread 9] 0 keys lost!
+[thread 10] 0 keys lost!
+[thread 8] 0 keys lost!
+[main] Retrieved 100000/100000 keys in 4.019504 seconds
+--- spinlock t=128 ---
+[Athul R - ar6316][main] Inserted 100000 keys in 0.015542 seconds
+[Athul R - ar6316][thread 122] 0 keys lost!
+[Athul R - ar6316][thread 125] 0 keys lost!
+[Athul R - ar6316][thread 126] 0 keys lost!
+[Athul R - ar6316][thread 127] 0 keys lost!
+[Athul R - ar6316][thread 123] 0 keys lost!
+[Athul R - ar6316][thread 121] 0 keys lost!
+[Athul R - ar6316][thread 124] 0 keys lost!
+[Athul R - ar6316][thread 118] 0 keys lost!
+[Athul R - ar6316][thread 119] 0 keys lost!
+[Athul R - ar6316][thread 120] 0 keys lost!
+[Athul R - ar6316][thread 117] 0 keys lost!
+[Athul R - ar6316][thread 116] 0 keys lost!
+[Athul R - ar6316][thread 115] 0 keys lost!
+[Athul R - ar6316][thread 114] 0 keys lost!
+[Athul R - ar6316][thread 112] 0 keys lost!
+[Athul R - ar6316][thread 113] 0 keys lost!
+[Athul R - ar6316][thread 111] 0 keys lost!
+[Athul R - ar6316][thread 107] 0 keys lost!
+[Athul R - ar6316][thread 109] 0 keys lost!
+[Athul R - ar6316][thread 110] 0 keys lost!
+[Athul R - ar6316][thread 108] 0 keys lost!
+[Athul R - ar6316][thread 104] 0 keys lost!
+[Athul R - ar6316][thread 105] 0 keys lost!
+[Athul R - ar6316][thread 106] 0 keys lost!
+[Athul R - ar6316][thread 103] 0 keys lost!
+[Athul R - ar6316][thread 99] 0 keys lost!
+[Athul R - ar6316][thread 101] 0 keys lost!
+[Athul R - ar6316][thread 102] 0 keys lost!
+[Athul R - ar6316][thread 97] 0 keys lost!
+[Athul R - ar6316][thread 96] 0 keys lost!
+[Athul R - ar6316][thread 98] 0 keys lost!
+[Athul R - ar6316][thread 92] 0 keys lost!
+[Athul R - ar6316][thread 95] 0 keys lost!
+[Athul R - ar6316][thread 100] 0 keys lost!
+[Athul R - ar6316][thread 93] 0 keys lost!
+[Athul R - ar6316][thread 91] 0 keys lost!
+[Athul R - ar6316][thread 89] 0 keys lost!
+[Athul R - ar6316][thread 94] 0 keys lost!
+[Athul R - ar6316][thread 90] 0 keys lost!
+[Athul R - ar6316][thread 88] 0 keys lost!
+[Athul R - ar6316][thread 86] 0 keys lost!
+[Athul R - ar6316][thread 84] 0 keys lost!
+[Athul R - ar6316][thread 85] 0 keys lost!
+[Athul R - ar6316][thread 81] 0 keys lost!
+[Athul R - ar6316][thread 87] 0 keys lost!
+[Athul R - ar6316][thread 83] 0 keys lost!
+[Athul R - ar6316][thread 82] 0 keys lost!
+[Athul R - ar6316][thread 80] 0 keys lost!
+[Athul R - ar6316][thread 79] 0 keys lost!
+[Athul R - ar6316][thread 77] 0 keys lost!
+[Athul R - ar6316][thread 78] 0 keys lost!
+[Athul R - ar6316][thread 76] 0 keys lost!
+[Athul R - ar6316][thread 75] 0 keys lost!
+[Athul R - ar6316][thread 74] 0 keys lost!
+[Athul R - ar6316][thread 69] 0 keys lost!
+[Athul R - ar6316][thread 73] 0 keys lost!
+[Athul R - ar6316][thread 70] 0 keys lost!
+[Athul R - ar6316][thread 67] 0 keys lost!
+[Athul R - ar6316][thread 72] 0 keys lost!
+[Athul R - ar6316][thread 71] 0 keys lost!
+[Athul R - ar6316][thread 68] 0 keys lost!
+[Athul R - ar6316][thread 66] 0 keys lost!
+[Athul R - ar6316][thread 37] 0 keys lost!
+[Athul R - ar6316][thread 64] 0 keys lost!
+[Athul R - ar6316][thread 63] 0 keys lost!
+[Athul R - ar6316][thread 65] 0 keys lost!
+[Athul R - ar6316][thread 61] 0 keys lost!
+[Athul R - ar6316][thread 60] 0 keys lost!
+[Athul R - ar6316][thread 36] 0 keys lost!
+[Athul R - ar6316][thread 59] 0 keys lost!
+[Athul R - ar6316][thread 58] 0 keys lost!
+[Athul R - ar6316][thread 57] 0 keys lost!
+[Athul R - ar6316][thread 62] 0 keys lost!
+[Athul R - ar6316][thread 35] 0 keys lost!
+[Athul R - ar6316][thread 53] 0 keys lost!
+[Athul R - ar6316][thread 56] 0 keys lost!
+[Athul R - ar6316][thread 54] 0 keys lost!
+[Athul R - ar6316][thread 55] 0 keys lost!
+[Athul R - ar6316][thread 47] 0 keys lost!
+[Athul R - ar6316][thread 48] 0 keys lost!
+[Athul R - ar6316][thread 46] 0 keys lost!
+[Athul R - ar6316][thread 49] 0 keys lost!
+[Athul R - ar6316][thread 50] 0 keys lost!
+[Athul R - ar6316][thread 51] 0 keys lost!
+[Athul R - ar6316][thread 52] 0 keys lost!
+[Athul R - ar6316][thread 34] 0 keys lost!
+[Athul R - ar6316][thread 45] 0 keys lost!
+[Athul R - ar6316][thread 32] 0 keys lost!
+[Athul R - ar6316][thread 42] 0 keys lost!
+[Athul R - ar6316][thread 44] 0 keys lost!
+[Athul R - ar6316][thread 43] 0 keys lost!
+[Athul R - ar6316][thread 41] 0 keys lost!
+[Athul R - ar6316][thread 29] 0 keys lost!
+[Athul R - ar6316][thread 40] 0 keys lost!
+[Athul R - ar6316][thread 33] 0 keys lost!
+[Athul R - ar6316][thread 31] 0 keys lost!
+[Athul R - ar6316][thread 39] 0 keys lost!
+[Athul R - ar6316][thread 38] 0 keys lost!
+[Athul R - ar6316][thread 30] 0 keys lost!
+[Athul R - ar6316][thread 28] 0 keys lost!
+[Athul R - ar6316][thread 18] 0 keys lost!
+[Athul R - ar6316][thread 26] 0 keys lost!
+[Athul R - ar6316][thread 27] 0 keys lost!
+[Athul R - ar6316][thread 21] 0 keys lost!
+[Athul R - ar6316][thread 25] 0 keys lost!
+[Athul R - ar6316][thread 23] 0 keys lost!
+[Athul R - ar6316][thread 22] 0 keys lost!
+[Athul R - ar6316][thread 15] 0 keys lost!
+[Athul R - ar6316][thread 3] 0 keys lost!
+[Athul R - ar6316][thread 24] 0 keys lost!
+[Athul R - ar6316][thread 16] 0 keys lost!
+[Athul R - ar6316][thread 20] 0 keys lost!
+[Athul R - ar6316][thread 17] 0 keys lost!
+[Athul R - ar6316][thread 0] 0 keys lost!
+[Athul R - ar6316][thread 9] 0 keys lost!
+[Athul R - ar6316][thread 19] 0 keys lost!
+[Athul R - ar6316][thread 5] 0 keys lost!
+[Athul R - ar6316][thread 13] 0 keys lost!
+[Athul R - ar6316][thread 14] 0 keys lost!
+[Athul R - ar6316][thread 10] 0 keys lost!
+[Athul R - ar6316][thread 2] 0 keys lost!
+[Athul R - ar6316][thread 12] 0 keys lost!
+[Athul R - ar6316][thread 11] 0 keys lost!
+[Athul R - ar6316][thread 8] 0 keys lost!
+[Athul R - ar6316][thread 1] 0 keys lost!
+[Athul R - ar6316][thread 6] 0 keys lost!
+[Athul R - ar6316][thread 4] 0 keys lost!
+[Athul R - ar6316][thread 7] 0 keys lost!
+[Athul R - ar6316][main] Retrieved 100000/100000 keys in 3.893949 seconds
+--- original t=256 ---
+[main] Inserted 100000 keys in 0.021768 seconds
+[thread 243] 1 keys lost!
+[thread 245] 0 keys lost!
+[thread 248] 0 keys lost!
+[thread 249] 0 keys lost!
+[thread 250] 0 keys lost!
+[thread 251] 1 keys lost!
+[thread 252] 0 keys lost!
+[thread 253] 0 keys lost!
+[thread 254] 0 keys lost!
+[thread 255] 0 keys lost!
+[thread 240] 0 keys lost!
+[thread 230] 0 keys lost!
+[thread 247] 0 keys lost!
+[thread 234] 0 keys lost!
+[thread 232] 0 keys lost!
+[thread 233] 0 keys lost!
+[thread 235] 1 keys lost!
+[thread 236] 1 keys lost!
+[thread 237] 0 keys lost!
+[thread 238] 0 keys lost!
+[thread 239] 0 keys lost!
+[thread 241] 0 keys lost!
+[thread 246] 1 keys lost!
+[thread 242] 0 keys lost!
+[thread 244] 0 keys lost!
+[thread 225] 2 keys lost!
+[thread 226] 0 keys lost!
+[thread 231] 0 keys lost!
+[thread 221] 0 keys lost!
+[thread 227] 0 keys lost!
+[thread 228] 0 keys lost!
+[thread 229] 0 keys lost!
+[thread 224] 3 keys lost!
+[thread 223] 0 keys lost!
+[thread 218] 0 keys lost!
+[thread 222] 0 keys lost!
+[thread 220] 0 keys lost!
+[thread 213] 0 keys lost!
+[thread 216] 0 keys lost!
+[thread 219] 0 keys lost!
+[thread 215] 0 keys lost!
+[thread 214] 1 keys lost!
+[thread 209] 0 keys lost!
+[thread 207] 0 keys lost!
+[thread 199] 2 keys lost!
+[thread 212] 0 keys lost!
+[thread 205] 0 keys lost!
+[thread 217] 0 keys lost!
+[thread 211] 0 keys lost!
+[thread 208] 0 keys lost!
+[thread 210] 0 keys lost!
+[thread 206] 0 keys lost!
+[thread 194] 0 keys lost!
+[thread 197] 0 keys lost!
+[thread 196] 0 keys lost!
+[thread 198] 0 keys lost!
+[thread 202] 1 keys lost!
+[thread 203] 2 keys lost!
+[thread 204] 0 keys lost!
+[thread 201] 0 keys lost!
+[thread 200] 1 keys lost!
+[thread 191] 1 keys lost!
+[thread 193] 0 keys lost!
+[thread 192] 0 keys lost!
+[thread 195] 0 keys lost!
+[thread 190] 0 keys lost!
+[thread 176] 0 keys lost!
+[thread 179] 0 keys lost!
+[thread 174] 0 keys lost!
+[thread 178] 0 keys lost!
+[thread 181] 0 keys lost!
+[thread 175] 0 keys lost!
+[thread 173] 0 keys lost!
+[thread 171] 0 keys lost!
+[thread 172] 0 keys lost!
+[thread 184] 0 keys lost!
+[thread 145] 0 keys lost!
+[thread 186] 0 keys lost!
+[thread 185] 0 keys lost!
+[thread 188] 0 keys lost!
+[thread 189] 0 keys lost!
+[thread 177] 0 keys lost!
+[thread 149] 0 keys lost!
+[thread 151] 0 keys lost!
+[thread 170] 0 keys lost!
+[thread 187] 0 keys lost!
+[thread 148] 0 keys lost!
+[thread 150] 0 keys lost!
+[thread 141] 0 keys lost!
+[thread 182] 0 keys lost!
+[thread 156] 0 keys lost!
+[thread 183] 0 keys lost!
+[thread 146] 0 keys lost!
+[thread 143] 1 keys lost!
+[thread 169] 0 keys lost!
+[thread 180] 0 keys lost!
+[thread 155] 0 keys lost!
+[thread 164] 0 keys lost!
+[thread 154] 1 keys lost!
+[thread 168] 0 keys lost!
+[thread 163] 0 keys lost!
+[thread 166] 1 keys lost!
+[thread 167] 1 keys lost!
+[thread 153] 0 keys lost!
+[thread 123] 0 keys lost!
+[thread 165] 0 keys lost!
+[thread 161] 0 keys lost!
+[thread 159] 0 keys lost!
+[thread 144] 0 keys lost!
+[thread 158] 0 keys lost!
+[thread 162] 1 keys lost!
+[thread 157] 0 keys lost!
+[thread 128] 0 keys lost!
+[thread 140] 0 keys lost!
+[thread 152] 0 keys lost!
+[thread 119] 0 keys lost!
+[thread 147] 0 keys lost!
+[thread 142] 0 keys lost!
+[thread 139] 0 keys lost!
+[thread 135] 1 keys lost!
+[thread 160] 0 keys lost!
+[thread 118] 0 keys lost!
+[thread 137] 1 keys lost!
+[thread 131] 0 keys lost!
+[thread 102] 0 keys lost!
+[thread 136] 0 keys lost!
+[thread 138] 0 keys lost!
+[thread 116] 0 keys lost!
+[thread 134] 0 keys lost!
+[thread 130] 0 keys lost!
+[thread 133] 0 keys lost!
+[thread 132] 0 keys lost!
+[thread 129] 0 keys lost!
+[thread 111] 0 keys lost!
+[thread 114] 0 keys lost!
+[thread 96] 0 keys lost!
+[thread 125] 1 keys lost!
+[thread 122] 0 keys lost!
+[thread 124] 0 keys lost!
+[thread 104] 0 keys lost!
+[thread 126] 0 keys lost!
+[thread 127] 2 keys lost!
+[thread 112] 0 keys lost!
+[thread 109] 0 keys lost!
+[thread 120] 0 keys lost!
+[thread 110] 0 keys lost!
+[thread 113] 0 keys lost!
+[thread 105] 0 keys lost!
+[thread 87] 0 keys lost!
+[thread 107] 0 keys lost!
+[thread 121] 0 keys lost!
+[thread 100] 0 keys lost!
+[thread 103] 0 keys lost!
+[thread 117] 0 keys lost!
+[thread 97] 0 keys lost!
+[thread 86] 0 keys lost!
+[thread 94] 0 keys lost!
+[thread 115] 0 keys lost!
+[thread 108] 0 keys lost!
+[thread 93] 0 keys lost!
+[thread 106] 0 keys lost!
+[thread 98] 0 keys lost!
+[thread 88] 0 keys lost!
+[thread 55] 0 keys lost!
+[thread 75] 0 keys lost!
+[thread 95] 0 keys lost!
+[thread 58] 0 keys lost!
+[thread 99] 0 keys lost!
+[thread 92] 0 keys lost!
+[thread 67] 0 keys lost!
+[thread 91] 0 keys lost!
+[thread 82] 0 keys lost!
+[thread 76] 0 keys lost!
+[thread 77] 0 keys lost!
+[thread 101] 0 keys lost!
+[thread 90] 0 keys lost!
+[thread 70] 0 keys lost!
+[thread 60] 0 keys lost!
+[thread 64] 0 keys lost!
+[thread 83] 0 keys lost!
+[thread 89] 0 keys lost!
+[thread 62] 0 keys lost!
+[thread 74] 0 keys lost!
+[thread 85] 0 keys lost!
+[thread 54] 0 keys lost!
+[thread 41] 0 keys lost!
+[thread 81] 1 keys lost!
+[thread 52] 2 keys lost!
+[thread 78] 0 keys lost!
+[thread 63] 0 keys lost!
+[thread 79] 0 keys lost!
+[thread 56] 0 keys lost!
+[thread 65] 0 keys lost!
+[thread 51] 0 keys lost!
+[thread 48] 0 keys lost!
+[thread 44] 0 keys lost!
+[thread 68] 0 keys lost!
+[thread 45] 0 keys lost!
+[thread 80] 0 keys lost!
+[thread 84] 0 keys lost!
+[thread 59] 0 keys lost!
+[thread 66] 0 keys lost!
+[thread 72] 0 keys lost!
+[thread 53] 0 keys lost!
+[thread 73] 0 keys lost!
+[thread 49] 0 keys lost!
+[thread 39] 0 keys lost!
+[thread 61] 0 keys lost!
+[thread 57] 0 keys lost!
+[thread 38] 0 keys lost!
+[thread 26] 0 keys lost!
+[thread 40] 0 keys lost!
+[thread 50] 0 keys lost!
+[thread 43] 0 keys lost!
+[thread 47] 0 keys lost!
+[thread 31] 0 keys lost!
+[thread 71] 0 keys lost!
+[thread 69] 0 keys lost!
+[thread 23] 0 keys lost!
+[thread 36] 0 keys lost!
+[thread 21] 1 keys lost!
+[thread 46] 0 keys lost!
+[thread 34] 0 keys lost!
+[thread 18] 0 keys lost!
+[thread 8] 0 keys lost!
+[thread 37] 0 keys lost!
+[thread 27] 0 keys lost!
+[thread 24] 0 keys lost!
+[thread 33] 0 keys lost!
+[thread 28] 0 keys lost!
+[thread 13] 0 keys lost!
+[thread 14] 0 keys lost!
+[thread 10] 0 keys lost!
+[thread 20] 0 keys lost!
+[thread 3] 1 keys lost!
+[thread 6] 0 keys lost!
+[thread 9] 0 keys lost!
+[thread 11] 0 keys lost!
+[thread 42] 0 keys lost!
+[thread 30] 0 keys lost!
+[thread 35] 0 keys lost!
+[thread 19] 0 keys lost!
+[thread 15] 0 keys lost!
+[thread 16] 0 keys lost!
+[thread 17] 0 keys lost!
+[thread 32] 0 keys lost!
+[thread 29] 0 keys lost!
+[thread 1] 0 keys lost!
+[thread 5] 0 keys lost!
+[thread 25] 0 keys lost!
+[thread 7] 0 keys lost!
+[thread 12] 0 keys lost!
+[thread 2] 0 keys lost!
+[thread 22] 0 keys lost!
+[thread 4] 0 keys lost!
+[thread 0] 0 keys lost!
+[main] Retrieved 99967/100000 keys in 3.877967 seconds
+--- mutex t=256 ---
+[main] Inserted 100000 keys in 0.021209 seconds
+[thread 241] 0 keys lost!
+[thread 242] 0 keys lost!
+[thread 244] 0 keys lost!
+[thread 245] 0 keys lost!
+[thread 247] 0 keys lost!
+[thread 249] 0 keys lost!
+[thread 250] 0 keys lost!
+[thread 251] 0 keys lost!
+[thread 254] 0 keys lost!
+[thread 255] 0 keys lost!
+[thread 252] 0 keys lost!
+[thread 253] 0 keys lost!
+[thread 248] 0 keys lost!
+[thread 246] 0 keys lost!
+[thread 243] 0 keys lost!
+[thread 232] 0 keys lost!
+[thread 233] 0 keys lost!
+[thread 235] 0 keys lost!
+[thread 236] 0 keys lost!
+[thread 238] 0 keys lost!
+[thread 237] 0 keys lost!
+[thread 239] 0 keys lost!
+[thread 240] 0 keys lost!
+[thread 234] 0 keys lost!
+[thread 229] 0 keys lost!
+[thread 223] 0 keys lost!
+[thread 230] 0 keys lost!
+[thread 228] 0 keys lost!
+[thread 226] 0 keys lost!
+[thread 225] 0 keys lost!
+[thread 217] 0 keys lost!
+[thread 231] 0 keys lost!
+[thread 227] 0 keys lost!
+[thread 219] 0 keys lost!
+[thread 218] 0 keys lost!
+[thread 221] 0 keys lost!
+[thread 224] 0 keys lost!
+[thread 214] 0 keys lost!
+[thread 222] 0 keys lost!
+[thread 215] 0 keys lost!
+[thread 220] 0 keys lost!
+[thread 206] 0 keys lost!
+[thread 216] 0 keys lost!
+[thread 209] 0 keys lost!
+[thread 213] 0 keys lost!
+[thread 212] 0 keys lost!
+[thread 207] 0 keys lost!
+[thread 210] 0 keys lost!
+[thread 208] 0 keys lost!
+[thread 204] 0 keys lost!
+[thread 211] 0 keys lost!
+[thread 205] 0 keys lost!
+[thread 202] 0 keys lost!
+[thread 203] 0 keys lost!
+[thread 199] 0 keys lost!
+[thread 194] 0 keys lost!
+[thread 201] 0 keys lost!
+[thread 196] 0 keys lost!
+[thread 197] 0 keys lost!
+[thread 198] 0 keys lost!
+[thread 200] 0 keys lost!
+[thread 188] 0 keys lost!
+[thread 181] 0 keys lost!
+[thread 195] 0 keys lost!
+[thread 190] 0 keys lost!
+[thread 168] 0 keys lost!
+[thread 193] 0 keys lost!
+[thread 191] 0 keys lost!
+[thread 189] 0 keys lost!
+[thread 192] 0 keys lost!
+[thread 186] 0 keys lost!
+[thread 185] 0 keys lost!
+[thread 184] 0 keys lost!
+[thread 183] 0 keys lost!
+[thread 187] 0 keys lost!
+[thread 182] 0 keys lost!
+[thread 179] 0 keys lost!
+[thread 175] 0 keys lost!
+[thread 177] 0 keys lost!
+[thread 167] 0 keys lost!
+[thread 176] 0 keys lost!
+[thread 180] 0 keys lost!
+[thread 163] 0 keys lost!
+[thread 173] 0 keys lost!
+[thread 174] 0 keys lost!
+[thread 178] 0 keys lost!
+[thread 170] 0 keys lost!
+[thread 138] 0 keys lost!
+[thread 164] 0 keys lost!
+[thread 172] 0 keys lost!
+[thread 171] 0 keys lost!
+[thread 157] 0 keys lost!
+[thread 162] 0 keys lost!
+[thread 134] 0 keys lost!
+[thread 169] 0 keys lost!
+[thread 165] 0 keys lost!
+[thread 166] 0 keys lost!
+[thread 158] 0 keys lost!
+[thread 153] 0 keys lost!
+[thread 140] 0 keys lost!
+[thread 160] 0 keys lost!
+[thread 148] 0 keys lost!
+[thread 161] 0 keys lost!
+[thread 145] 0 keys lost!
+[thread 139] 0 keys lost!
+[thread 156] 0 keys lost!
+[thread 159] 0 keys lost!
+[thread 133] 0 keys lost!
+[thread 149] 0 keys lost!
+[thread 132] 0 keys lost!
+[thread 137] 0 keys lost!
+[thread 135] 0 keys lost!
+[thread 143] 0 keys lost!
+[thread 146] 0 keys lost!
+[thread 120] 0 keys lost!
+[thread 155] 0 keys lost!
+[thread 128] 0 keys lost!
+[thread 152] 0 keys lost!
+[thread 129] 0 keys lost!
+[thread 121] 0 keys lost!
+[thread 142] 0 keys lost!
+[thread 154] 0 keys lost!
+[thread 150] 0 keys lost!
+[thread 141] 0 keys lost!
+[thread 136] 0 keys lost!
+[thread 126] 0 keys lost!
+[thread 151] 0 keys lost!
+[thread 105] 0 keys lost!
+[thread 144] 0 keys lost!
+[thread 111] 0 keys lost!
+[thread 147] 0 keys lost!
+[thread 123] 0 keys lost!
+[thread 127] 0 keys lost!
+[thread 110] 0 keys lost!
+[thread 131] 0 keys lost!
+[thread 102] 0 keys lost!
+[thread 117] 0 keys lost!
+[thread 113] 0 keys lost!
+[thread 112] 0 keys lost!
+[thread 119] 0 keys lost!
+[thread 115] 0 keys lost!
+[thread 122] 0 keys lost!
+[thread 125] 0 keys lost!
+[thread 91] 0 keys lost!
+[thread 104] 0 keys lost!
+[thread 109] 0 keys lost!
+[thread 124] 0 keys lost!
+[thread 95] 0 keys lost!
+[thread 103] 0 keys lost!
+[thread 118] 0 keys lost!
+[thread 97] 0 keys lost!
+[thread 130] 0 keys lost!
+[thread 79] 0 keys lost!
+[thread 80] 0 keys lost!
+[thread 107] 0 keys lost!
+[thread 116] 0 keys lost!
+[thread 106] 0 keys lost!
+[thread 114] 0 keys lost!
+[thread 85] 0 keys lost!
+[thread 93] 0 keys lost!
+[thread 99] 0 keys lost!
+[thread 98] 0 keys lost!
+[thread 88] 0 keys lost!
+[thread 77] 0 keys lost!
+[thread 92] 0 keys lost!
+[thread 82] 0 keys lost!
+[thread 96] 0 keys lost!
+[thread 67] 0 keys lost!
+[thread 94] 0 keys lost!
+[thread 108] 0 keys lost!
+[thread 81] 0 keys lost!
+[thread 58] 0 keys lost!
+[thread 84] 0 keys lost!
+[thread 100] 0 keys lost!
+[thread 86] 0 keys lost!
+[thread 87] 0 keys lost!
+[thread 90] 0 keys lost!
+[thread 101] 0 keys lost!
+[thread 76] 0 keys lost!
+[thread 73] 0 keys lost!
+[thread 89] 0 keys lost!
+[thread 63] 0 keys lost!
+[thread 64] 0 keys lost!
+[thread 70] 0 keys lost!
+[thread 78] 0 keys lost!
+[thread 83] 0 keys lost!
+[thread 72] 0 keys lost!
+[thread 71] 0 keys lost!
+[thread 60] 0 keys lost!
+[thread 74] 0 keys lost!
+[thread 49] 0 keys lost!
+[thread 75] 0 keys lost!
+[thread 54] 0 keys lost!
+[thread 57] 0 keys lost!
+[thread 66] 0 keys lost!
+[thread 44] 0 keys lost!
+[thread 68] 0 keys lost!
+[thread 52] 0 keys lost!
+[thread 62] 0 keys lost!
+[thread 50] 0 keys lost!
+[thread 61] 0 keys lost!
+[thread 69] 0 keys lost!
+[thread 38] 0 keys lost!
+[thread 48] 0 keys lost!
+[thread 51] 0 keys lost!
+[thread 45] 0 keys lost!
+[thread 65] 0 keys lost!
+[thread 34] 0 keys lost!
+[thread 59] 0 keys lost!
+[thread 46] 0 keys lost!
+[thread 55] 0 keys lost!
+[thread 37] 0 keys lost!
+[thread 53] 0 keys lost!
+[thread 56] 0 keys lost!
+[thread 47] 0 keys lost!
+[thread 27] 0 keys lost!
+[thread 40] 0 keys lost!
+[thread 22] 0 keys lost!
+[thread 24] 0 keys lost!
+[thread 18] 0 keys lost!
+[thread 17] 0 keys lost!
+[thread 41] 0 keys lost!
+[thread 21] 0 keys lost!
+[thread 43] 0 keys lost!
+[thread 12] 0 keys lost!
+[thread 28] 0 keys lost!
+[thread 13] 0 keys lost!
+[thread 30] 0 keys lost!
+[thread 15] 0 keys lost!
+[thread 31] 0 keys lost!
+[thread 25] 0 keys lost!
+[thread 36] 0 keys lost!
+[thread 35] 0 keys lost!
+[thread 11] 0 keys lost!
+[thread 33] 0 keys lost!
+[thread 39] 0 keys lost!
+[thread 20] 0 keys lost!
+[thread 19] 0 keys lost!
+[thread 42] 0 keys lost!
+[thread 26] 0 keys lost!
+[thread 29] 0 keys lost!
+[thread 32] 0 keys lost!
+[thread 23] 0 keys lost!
+[thread 9] 0 keys lost!
+[thread 10] 0 keys lost!
+[thread 5] 0 keys lost!
+[thread 3] 0 keys lost!
+[thread 6] 0 keys lost!
+[thread 8] 0 keys lost!
+[thread 4] 0 keys lost!
+[thread 2] 0 keys lost!
+[thread 16] 0 keys lost!
+[thread 7] 0 keys lost!
+[thread 14] 0 keys lost!
+[thread 1] 0 keys lost!
+[thread 0] 0 keys lost!
+[main] Retrieved 100000/100000 keys in 4.076409 seconds
+--- spinlock t=256 ---
+[Athul R - ar6316][main] Inserted 100000 keys in 0.038863 seconds
+[Athul R - ar6316][thread 207] 0 keys lost!
+[Athul R - ar6316][thread 223] 0 keys lost!
+[Athul R - ar6316][thread 226] 0 keys lost!
+[Athul R - ar6316][thread 227] 0 keys lost!
+[Athul R - ar6316][thread 250] 0 keys lost!
+[Athul R - ar6316][thread 246] 0 keys lost!
+[Athul R - ar6316][thread 251] 0 keys lost!
+[Athul R - ar6316][thread 247] 0 keys lost!
+[Athul R - ar6316][thread 252] 0 keys lost!
+[Athul R - ar6316][thread 248] 0 keys lost!
+[Athul R - ar6316][thread 253] 0 keys lost!
+[Athul R - ar6316][thread 254] 0 keys lost!
+[Athul R - ar6316][thread 255] 0 keys lost!
+[Athul R - ar6316][thread 249] 0 keys lost!
+[Athul R - ar6316][thread 206] 0 keys lost!
+[Athul R - ar6316][thread 221] 0 keys lost!
+[Athul R - ar6316][thread 224] 0 keys lost!
+[Athul R - ar6316][thread 222] 0 keys lost!
+[Athul R - ar6316][thread 243] 0 keys lost!
+[Athul R - ar6316][thread 244] 0 keys lost!
+[Athul R - ar6316][thread 241] 0 keys lost!
+[Athul R - ar6316][thread 205] 0 keys lost!
+[Athul R - ar6316][thread 237] 0 keys lost!
+[Athul R - ar6316][thread 220] 0 keys lost!
+[Athul R - ar6316][thread 219] 0 keys lost!
+[Athul R - ar6316][thread 218] 0 keys lost!
+[Athul R - ar6316][thread 225] 0 keys lost!
+[Athul R - ar6316][thread 215] 0 keys lost!
+[Athul R - ar6316][thread 242] 0 keys lost!
+[Athul R - ar6316][thread 217] 0 keys lost!
+[Athul R - ar6316][thread 240] 0 keys lost!
+[Athul R - ar6316][thread 239] 0 keys lost!
+[Athul R - ar6316][thread 232] 0 keys lost!
+[Athul R - ar6316][thread 233] 0 keys lost!
+[Athul R - ar6316][thread 210] 0 keys lost!
+[Athul R - ar6316][thread 216] 0 keys lost!
+[Athul R - ar6316][thread 214] 0 keys lost!
+[Athul R - ar6316][thread 213] 0 keys lost!
+[Athul R - ar6316][thread 212] 0 keys lost!
+[Athul R - ar6316][thread 208] 0 keys lost!
+[Athul R - ar6316][thread 238] 0 keys lost!
+[Athul R - ar6316][thread 235] 0 keys lost!
+[Athul R - ar6316][thread 236] 0 keys lost!
+[Athul R - ar6316][thread 211] 0 keys lost!
+[Athul R - ar6316][thread 209] 0 keys lost!
+[Athul R - ar6316][thread 201] 0 keys lost!
+[Athul R - ar6316][thread 204] 0 keys lost!
+[Athul R - ar6316][thread 171] 0 keys lost!
+[Athul R - ar6316][thread 234] 0 keys lost!
+[Athul R - ar6316][thread 203] 0 keys lost!
+[Athul R - ar6316][thread 202] 0 keys lost!
+[Athul R - ar6316][thread 229] 0 keys lost!
+[Athul R - ar6316][thread 230] 0 keys lost!
+[Athul R - ar6316][thread 179] 0 keys lost!
+[Athul R - ar6316][thread 181] 0 keys lost!
+[Athul R - ar6316][thread 197] 0 keys lost!
+[Athul R - ar6316][thread 245] 0 keys lost!
+[Athul R - ar6316][thread 195] 0 keys lost!
+[Athul R - ar6316][thread 228] 0 keys lost!
+[Athul R - ar6316][thread 180] 0 keys lost!
+[Athul R - ar6316][thread 196] 0 keys lost!
+[Athul R - ar6316][thread 200] 0 keys lost!
+[Athul R - ar6316][thread 183] 0 keys lost!
+[Athul R - ar6316][thread 192] 0 keys lost!
+[Athul R - ar6316][thread 176] 0 keys lost!
+[Athul R - ar6316][thread 178] 0 keys lost!
+[Athul R - ar6316][thread 177] 0 keys lost!
+[Athul R - ar6316][thread 173] 0 keys lost!
+[Athul R - ar6316][thread 175] 0 keys lost!
+[Athul R - ar6316][thread 231] 0 keys lost!
+[Athul R - ar6316][thread 199] 0 keys lost!
+[Athul R - ar6316][thread 174] 0 keys lost!
+[Athul R - ar6316][thread 182] 0 keys lost!
+[Athul R - ar6316][thread 188] 0 keys lost!
+[Athul R - ar6316][thread 165] 0 keys lost!
+[Athul R - ar6316][thread 193] 0 keys lost!
+[Athul R - ar6316][thread 194] 0 keys lost!
+[Athul R - ar6316][thread 169] 0 keys lost!
+[Athul R - ar6316][thread 191] 0 keys lost!
+[Athul R - ar6316][thread 187] 0 keys lost!
+[Athul R - ar6316][thread 166] 0 keys lost!
+[Athul R - ar6316][thread 170] 0 keys lost!
+[Athul R - ar6316][thread 164] 0 keys lost!
+[Athul R - ar6316][thread 160] 0 keys lost!
+[Athul R - ar6316][thread 154] 0 keys lost!
+[Athul R - ar6316][thread 162] 0 keys lost!
+[Athul R - ar6316][thread 189] 0 keys lost!
+[Athul R - ar6316][thread 157] 0 keys lost!
+[Athul R - ar6316][thread 150] 0 keys lost!
+[Athul R - ar6316][thread 140] 0 keys lost!
+[Athul R - ar6316][thread 172] 0 keys lost!
+[Athul R - ar6316][thread 159] 0 keys lost!
+[Athul R - ar6316][thread 127] 0 keys lost!
+[Athul R - ar6316][thread 147] 0 keys lost!
+[Athul R - ar6316][thread 185] 0 keys lost!
+[Athul R - ar6316][thread 138] 0 keys lost!
+[Athul R - ar6316][thread 151] 0 keys lost!
+[Athul R - ar6316][thread 152] 0 keys lost!
+[Athul R - ar6316][thread 148] 0 keys lost!
+[Athul R - ar6316][thread 126] 0 keys lost!
+[Athul R - ar6316][thread 136] 0 keys lost!
+[Athul R - ar6316][thread 131] 0 keys lost!
+[Athul R - ar6316][thread 122] 0 keys lost!
+[Athul R - ar6316][thread 149] 0 keys lost!
+[Athul R - ar6316][thread 134] 0 keys lost!
+[Athul R - ar6316][thread 133] 0 keys lost!
+[Athul R - ar6316][thread 144] 0 keys lost!
+[Athul R - ar6316][thread 130] 0 keys lost!
+[Athul R - ar6316][thread 129] 0 keys lost!
+[Athul R - ar6316][thread 128] 0 keys lost!
+[Athul R - ar6316][thread 141] 0 keys lost!
+[Athul R - ar6316][thread 120] 0 keys lost!
+[Athul R - ar6316][thread 168] 0 keys lost!
+[Athul R - ar6316][thread 132] 0 keys lost!
+[Athul R - ar6316][thread 125] 0 keys lost!
+[Athul R - ar6316][thread 123] 0 keys lost!
+[Athul R - ar6316][thread 139] 0 keys lost!
+[Athul R - ar6316][thread 135] 0 keys lost!
+[Athul R - ar6316][thread 106] 0 keys lost!
+[Athul R - ar6316][thread 115] 0 keys lost!
+[Athul R - ar6316][thread 121] 0 keys lost!
+[Athul R - ar6316][thread 143] 0 keys lost!
+[Athul R - ar6316][thread 96] 0 keys lost!
+[Athul R - ar6316][thread 163] 0 keys lost!
+[Athul R - ar6316][thread 124] 0 keys lost!
+[Athul R - ar6316][thread 146] 0 keys lost!
+[Athul R - ar6316][thread 103] 0 keys lost!
+[Athul R - ar6316][thread 117] 0 keys lost!
+[Athul R - ar6316][thread 112] 0 keys lost!
+[Athul R - ar6316][thread 113] 0 keys lost!
+[Athul R - ar6316][thread 88] 0 keys lost!
+[Athul R - ar6316][thread 119] 0 keys lost!
+[Athul R - ar6316][thread 99] 0 keys lost!
+[Athul R - ar6316][thread 145] 0 keys lost!
+[Athul R - ar6316][thread 105] 0 keys lost!
+[Athul R - ar6316][thread 114] 0 keys lost!
+[Athul R - ar6316][thread 82] 0 keys lost!
+[Athul R - ar6316][thread 109] 0 keys lost!
+[Athul R - ar6316][thread 116] 0 keys lost!
+[Athul R - ar6316][thread 110] 0 keys lost!
+[Athul R - ar6316][thread 118] 0 keys lost!
+[Athul R - ar6316][thread 167] 0 keys lost!
+[Athul R - ar6316][thread 190] 0 keys lost!
+[Athul R - ar6316][thread 186] 0 keys lost!
+[Athul R - ar6316][thread 89] 0 keys lost!
+[Athul R - ar6316][thread 184] 0 keys lost!
+[Athul R - ar6316][thread 65] 0 keys lost!
+[Athul R - ar6316][thread 111] 0 keys lost!
+[Athul R - ar6316][thread 100] 0 keys lost!
+[Athul R - ar6316][thread 97] 0 keys lost!
+[Athul R - ar6316][thread 107] 0 keys lost!
+[Athul R - ar6316][thread 137] 0 keys lost!
+[Athul R - ar6316][thread 108] 0 keys lost!
+[Athul R - ar6316][thread 94] 0 keys lost!
+[Athul R - ar6316][thread 95] 0 keys lost!
+[Athul R - ar6316][thread 85] 0 keys lost!
+[Athul R - ar6316][thread 81] 0 keys lost!
+[Athul R - ar6316][thread 78] 0 keys lost!
+[Athul R - ar6316][thread 104] 0 keys lost!
+[Athul R - ar6316][thread 155] 0 keys lost!
+[Athul R - ar6316][thread 93] 0 keys lost!
+[Athul R - ar6316][thread 79] 0 keys lost!
+[Athul R - ar6316][thread 98] 0 keys lost!
+[Athul R - ar6316][thread 30] 0 keys lost!
+[Athul R - ar6316][thread 91] 0 keys lost!
+[Athul R - ar6316][thread 29] 0 keys lost!
+[Athul R - ar6316][thread 84] 0 keys lost!
+[Athul R - ar6316][thread 101] 0 keys lost!
+[Athul R - ar6316][thread 102] 0 keys lost!
+[Athul R - ar6316][thread 86] 0 keys lost!
+[Athul R - ar6316][thread 198] 0 keys lost!
+[Athul R - ar6316][thread 80] 0 keys lost!
+[Athul R - ar6316][thread 158] 0 keys lost!
+[Athul R - ar6316][thread 83] 0 keys lost!
+[Athul R - ar6316][thread 75] 0 keys lost!
+[Athul R - ar6316][thread 92] 0 keys lost!
+[Athul R - ar6316][thread 142] 0 keys lost!
+[Athul R - ar6316][thread 87] 0 keys lost!
+[Athul R - ar6316][thread 161] 0 keys lost!
+[Athul R - ar6316][thread 90] 0 keys lost!
+[Athul R - ar6316][thread 41] 0 keys lost!
+[Athul R - ar6316][thread 156] 0 keys lost!
+[Athul R - ar6316][thread 35] 0 keys lost!
+[Athul R - ar6316][thread 72] 0 keys lost!
+[Athul R - ar6316][thread 37] 0 keys lost!
+[Athul R - ar6316][thread 68] 0 keys lost!
+[Athul R - ar6316][thread 73] 0 keys lost!
+[Athul R - ar6316][thread 71] 0 keys lost!
+[Athul R - ar6316][thread 153] 0 keys lost!
+[Athul R - ar6316][thread 38] 0 keys lost!
+[Athul R - ar6316][thread 25] 0 keys lost!
+[Athul R - ar6316][thread 60] 0 keys lost!
+[Athul R - ar6316][thread 69] 0 keys lost!
+[Athul R - ar6316][thread 77] 0 keys lost!
+[Athul R - ar6316][thread 56] 0 keys lost!
+[Athul R - ar6316][thread 34] 0 keys lost!
+[Athul R - ar6316][thread 39] 0 keys lost!
+[Athul R - ar6316][thread 36] 0 keys lost!
+[Athul R - ar6316][thread 66] 0 keys lost!
+[Athul R - ar6316][thread 59] 0 keys lost!
+[Athul R - ar6316][thread 28] 0 keys lost!
+[Athul R - ar6316][thread 27] 0 keys lost!
+[Athul R - ar6316][thread 53] 0 keys lost!
+[Athul R - ar6316][thread 31] 0 keys lost!
+[Athul R - ar6316][thread 43] 0 keys lost!
+[Athul R - ar6316][thread 45] 0 keys lost!
+[Athul R - ar6316][thread 74] 0 keys lost!
+[Athul R - ar6316][thread 32] 0 keys lost!
+[Athul R - ar6316][thread 57] 0 keys lost!
+[Athul R - ar6316][thread 47] 0 keys lost!
+[Athul R - ar6316][thread 62] 0 keys lost!
+[Athul R - ar6316][thread 61] 0 keys lost!
+[Athul R - ar6316][thread 24] 0 keys lost!
+[Athul R - ar6316][thread 63] 0 keys lost!
+[Athul R - ar6316][thread 58] 0 keys lost!
+[Athul R - ar6316][thread 76] 0 keys lost!
+[Athul R - ar6316][thread 51] 0 keys lost!
+[Athul R - ar6316][thread 26] 0 keys lost!
+[Athul R - ar6316][thread 33] 0 keys lost!
+[Athul R - ar6316][thread 54] 0 keys lost!
+[Athul R - ar6316][thread 40] 0 keys lost!
+[Athul R - ar6316][thread 7] 0 keys lost!
+[Athul R - ar6316][thread 19] 0 keys lost!
+[Athul R - ar6316][thread 70] 0 keys lost!
+[Athul R - ar6316][thread 12] 0 keys lost!
+[Athul R - ar6316][thread 23] 0 keys lost!
+[Athul R - ar6316][thread 50] 0 keys lost!
+[Athul R - ar6316][thread 13] 0 keys lost!
+[Athul R - ar6316][thread 44] 0 keys lost!
+[Athul R - ar6316][thread 55] 0 keys lost!
+[Athul R - ar6316][thread 46] 0 keys lost!
+[Athul R - ar6316][thread 67] 0 keys lost!
+[Athul R - ar6316][thread 52] 0 keys lost!
+[Athul R - ar6316][thread 11] 0 keys lost!
+[Athul R - ar6316][thread 16] 0 keys lost!
+[Athul R - ar6316][thread 48] 0 keys lost!
+[Athul R - ar6316][thread 49] 0 keys lost!
+[Athul R - ar6316][thread 20] 0 keys lost!
+[Athul R - ar6316][thread 17] 0 keys lost!
+[Athul R - ar6316][thread 1] 0 keys lost!
+[Athul R - ar6316][thread 18] 0 keys lost!
+[Athul R - ar6316][thread 64] 0 keys lost!
+[Athul R - ar6316][thread 10] 0 keys lost!
+[Athul R - ar6316][thread 4] 0 keys lost!
+[Athul R - ar6316][thread 15] 0 keys lost!
+[Athul R - ar6316][thread 9] 0 keys lost!
+[Athul R - ar6316][thread 5] 0 keys lost!
+[Athul R - ar6316][thread 3] 0 keys lost!
+[Athul R - ar6316][thread 21] 0 keys lost!
+[Athul R - ar6316][thread 2] 0 keys lost!
+[Athul R - ar6316][thread 6] 0 keys lost!
+[Athul R - ar6316][thread 0] 0 keys lost!
+[Athul R - ar6316][thread 8] 0 keys lost!
+[Athul R - ar6316][thread 22] 0 keys lost!
+[Athul R - ar6316][thread 14] 0 keys lost!
+[Athul R - ar6316][thread 42] 0 keys lost!
+[Athul R - ar6316][main] Retrieved 100000/100000 keys in 4.002734 seconds
