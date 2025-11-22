@@ -197,7 +197,7 @@ Because retrieving a key from the hash table only reads data and does not modify
 
 # Mutex, Insert Parallelization
 ### Q4
-Last, let’s consider insertions. Describe a situation in which multiple insertions could happen
+> Last, let’s consider insertions. Describe a situation in which multiple insertions could happen
 safely.
 
 
@@ -209,7 +209,7 @@ This fine-grained locking greatly increases concurrency and makes insert operati
 
 
 The result of this approach is that insertions become an order of magnitude faster.
-![Q5 SS](./images/Q5.png)
+![Q5 SS](./images/q5.png)
 
 
 In parallel_mutex_opt, we use an array of mutexes, each mutex per bucket in the hash table.
@@ -219,4 +219,4 @@ pthread_mutex_t mutex[NUM_BUCKETS];
 
 In parallel_mutex.c, we use one global mutex for inserting for the entire hash table.
 pthread_mutex_t mutex;
-![Q5 SS](./images/pthread_mutex.png)
+![Q5 SS](./images/pthread_mutex_opt.png)
