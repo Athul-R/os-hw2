@@ -1,16 +1,25 @@
+import os
 import re
 from pathlib import Path
-from typing import Dict, List, Tuple
+from typing import Dict, List
+
+# Force non-GUI backend and ensure matplotlib can write its cache inside the workspace
+os.environ.setdefault("MPLBACKEND", "Agg")
+mpl_dir = Path(__file__).resolve().parent / ".mplconfig"
+mpl_dir.mkdir(exist_ok=True)
+os.environ.setdefault("MPLCONFIGDIR", str(mpl_dir))
+
+import matplotlib.pyplot as plt
+
+PhaseData = Dict[str, Dict[int, Dict[str, float]]]  # impl -> threads -> {"insert": t, "retrieve": t}
 
 
-PointMap = Dict[str, Dict[int, float]]
+def parse_timings(log_path: Path) -> PhaseData:
+    pattern_header = re.compile(r"--- (original|mutex|spinlock) t=(\d+) ---")
+    pattern_insert = re.compile(r"Inserted \d+ keys in ([0-9.]+) seconds")
+    pattern_retrieve = re.compile(r"Retrieved \d+/\d+ keys in ([0-9.]+) seconds")
 
-
-def parse_timings(log_path: Path, key_string: str) -> PointMap:
-    pattern_header = re.compile(r"--- (original|mutex) t=(\d+) ---")
-    pattern_time = re.compile(f".* {key_string} .* in ([0-9.]+) seconds")
-
-    results: PointMap = {"original": {}, "mutex": {}}
+    results: PhaseData = {"original": {}, "mutex": {}, "spinlock": {}}
     current = None
 
     for line in log_path.read_text().splitlines():
@@ -23,108 +32,69 @@ def parse_timings(log_path: Path, key_string: str) -> PointMap:
         if current is None:
             continue
 
-        time_match = pattern_time.search(line)
-        if time_match:
-            impl, threads = current
-            elapsed = float(time_match.group(1))
-            # Sum insert + retrieve time for each run
-            results[impl].setdefault(threads, 0.0)
-            results[impl][threads] += elapsed
+        impl, threads = current
+        m_insert = pattern_insert.search(line)
+        m_retrieve = pattern_retrieve.search(line)
+        if m_insert:
+            results[impl].setdefault(threads, {})["insert"] = float(m_insert.group(1))
+        if m_retrieve:
+            results[impl].setdefault(threads, {})["retrieve"] = float(m_retrieve.group(1))
 
     return results
 
 
+def plot_series(
+    threads: List[int],
+    series: Dict[str, List[float]],
+    title: str,
+    ylabel: str,
+    out_path: Path,
+):
+    plt.figure(figsize=(8, 4))
+    colors = {"original": "#1f77b4", "mutex": "#d62728", "spinlock": "#2ca02c"}
+    labels = {"original": "Original", "mutex": "Mutex", "spinlock": "Spinlock"}
+    for impl, values in series.items():
+        plt.plot(threads, values, marker="o", label=labels.get(impl, impl), color=colors.get(impl))
+    plt.xlabel("Threads")
+    plt.ylabel(ylabel)
+    plt.title(title)
+    plt.xticks(threads)
+    plt.grid(True, linestyle="--", alpha=0.5)
+    plt.legend()
+    plt.tight_layout()
+    plt.savefig(out_path, dpi=150)
+    print(f"Saved {out_path}")
+
+
 def main():
-    log_path = Path("timing_output.txt")
+    log_path = Path("timing_output_with_spin.txt")
     if not log_path.exists():
         raise SystemExit(f"Missing log file: {log_path}")
-    key_string = "Retrieved"
-    results = parse_timings(log_path, key_string)
-    print(results)
-    threads_sorted = sorted(set(results["original"]) | set(results["mutex"]))
+
+    results = parse_timings(log_path)
+    threads_sorted = sorted(
+        set().union(*(results[impl].keys() for impl in results))
+    )
     if not threads_sorted:
         raise SystemExit("No timing data found in log file.")
 
-    orig_times = [results["original"].get(t, float("nan")) for t in threads_sorted]
-    mutex_times = [results["mutex"].get(t, float("nan")) for t in threads_sorted]
+    insert_series: Dict[str, List[float]] = {}
+    retrieve_series: Dict[str, List[float]] = {}
+    total_series: Dict[str, List[float]] = {}
+    for impl in results:
+        insert_series[impl] = []
+        retrieve_series[impl] = []
+        total_series[impl] = []
+        for t in threads_sorted:
+            ins = results[impl].get(t, {}).get("insert", float("nan"))
+            ret = results[impl].get(t, {}).get("retrieve", float("nan"))
+            insert_series[impl].append(ins)
+            retrieve_series[impl].append(ret)
+            total_series[impl].append(ins + ret)
 
-    create_svg(threads_sorted, orig_times, mutex_times, Path("timing_plot.svg"), key_string)
-
-
-def create_svg(threads: List[int], orig: List[float], mutex: List[float], out_path: Path, key_string="Retrieve"):
-    width, height = 720, 420
-    margin = 60
-    plot_w = width - 2 * margin
-    plot_h = height - 2 * margin
-
-    max_time = max([t for t in orig + mutex if t == t])  # filter nan
-    min_time = min([t for t in orig + mutex if t == t])
-    # Avoid zero range
-    if max_time == min_time:
-        max_time += 1.0
-
-    def x_pos(idx: int) -> float:
-        return margin + (plot_w * idx / (len(threads) - 1 if len(threads) > 1 else 1))
-
-    def y_pos(val: float) -> float:
-        # Flip y (SVG origin is top-left)
-        return margin + plot_h - ((val - min_time) / (max_time - min_time)) * plot_h
-
-    def polyline(points: List[Tuple[float, float]], color: str) -> str:
-        coords = " ".join(f"{x:.1f},{y:.1f}" for x, y in points)
-        return f'<polyline fill="none" stroke="{color}" stroke-width="2" points="{coords}"/>\n'
-
-    def markers(points: List[Tuple[float, float]], color: str) -> str:
-        return "\n".join(f'<circle cx="{x:.1f}" cy="{y:.1f}" r="4" fill="{color}"/>' for x, y in points)
-
-    # Build axes and labels
-    svg = [
-        f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}">',
-        f'<rect width="100%" height="100%" fill="white"/>',
-        f'<text x="{width/2:.1f}" y="28" text-anchor="middle" font-family="Arial" font-size="18">Hashtable {key_string} runtime vs. thread count</text>',
-        # Y axis
-        f'<line x1="{margin}" y1="{margin}" x2="{margin}" y2="{height - margin}" stroke="black" />',
-        # X axis
-        f'<line x1="{margin}" y1="{height - margin}" x2="{width - margin}" y2="{height - margin}" stroke="black" />',
-        f'<text x="{margin - 10}" y="{margin - 10}" text-anchor="end" font-family="Arial" font-size="12">Time (s)</text>',
-        f'<text x="{width/2:.1f}" y="{height - 10}" text-anchor="middle" font-family="Arial" font-size="12">Threads</text>',
-    ]
-
-    # y ticks (5 ticks)
-    for i in range(6):
-        val = min_time + (max_time - min_time) * i / 5
-        y = y_pos(val)
-        svg.append(f'<line x1="{margin-5}" y1="{y:.1f}" x2="{margin}" y2="{y:.1f}" stroke="black" />')
-        svg.append(f'<text x="{margin-8}" y="{y+4:.1f}" text-anchor="end" font-family="Arial" font-size="10">{val:.2f}</text>')
-        svg.append(f'<line x1="{margin}" y1="{y:.1f}" x2="{width - margin}" y2="{y:.1f}" stroke="#ddd" />')
-
-    # x ticks
-    for idx, t in enumerate(threads):
-        x = x_pos(idx)
-        svg.append(f'<line x1="{x:.1f}" y1="{height - margin}" x2="{x:.1f}" y2="{height - margin + 5}" stroke="black" />')
-        svg.append(f'<text x="{x:.1f}" y="{height - margin + 18}" text-anchor="middle" font-family="Arial" font-size="10">{t}</text>')
-
-    orig_points = [(x_pos(i), y_pos(orig[i])) for i in range(len(threads))]
-    mutex_points = [(x_pos(i), y_pos(mutex[i])) for i in range(len(threads))]
-
-    svg.append(polyline(orig_points, "#1f77b4"))
-    svg.append(polyline(mutex_points, "#d62728"))
-    svg.append(markers(orig_points, "#1f77b4"))
-    svg.append(markers(mutex_points, "#d62728"))
-
-    # Legend
-    legend_x = width - margin - 170
-    legend_y = margin
-    svg.append(f'<rect x="{legend_x}" y="{legend_y}" width="170" height="50" fill="white" stroke="black"/>')
-    svg.append(f'<line x1="{legend_x + 10}" y1="{legend_y + 15}" x2="{legend_x + 30}" y2="{legend_y + 15}" stroke="#1f77b4" stroke-width="2"/>')
-    svg.append(f'<text x="{legend_x + 40}" y="{legend_y + 19}" font-family="Arial" font-size="12">Original (unsafe)</text>')
-    svg.append(f'<line x1="{legend_x + 10}" y1="{legend_y + 35}" x2="{legend_x + 30}" y2="{legend_y + 35}" stroke="#d62728" stroke-width="2"/>')
-    svg.append(f'<text x="{legend_x + 40}" y="{legend_y + 39}" font-family="Arial" font-size="12">Mutex</text>')
-
-    svg.append("</svg>")
-
-    out_path.write_text("\n".join(svg))
-    print(f"Saved {out_path}")
+    plot_series(threads_sorted, insert_series, "Insertion time vs. threads", "Time (s)", Path("timing_insert.png"))
+    plot_series(threads_sorted, retrieve_series, "Retrieval time vs. threads", "Time (s)", Path("timing_retrieve.png"))
+    plot_series(threads_sorted, total_series, "Total time (insert+retrieve) vs. threads", "Time (s)", Path("timing_total.png"))
 
 
 if __name__ == "__main__":

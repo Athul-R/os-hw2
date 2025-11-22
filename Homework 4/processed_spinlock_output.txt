@@ -1,0 +1,81 @@
+--- original t=1 ---
+[main] Inserted 100000 keys in 0.004710 seconds
+[main] Retrieved 100000/100000 keys in 7.285143 seconds
+--- mutex t=1 ---
+[main] Inserted 100000 keys in 0.006082 seconds
+[main] Retrieved 100000/100000 keys in 7.445922 seconds
+--- spinlock t=1 ---
+[Athul R - ar6316][main] Inserted 100000 keys in 0.006268 seconds
+[Athul R - ar6316][main] Retrieved 100000/100000 keys in 7.349988 seconds
+--- original t=2 ---
+[main] Inserted 100000 keys in 0.003754 seconds
+[main] Retrieved 99947/100000 keys in 3.449071 seconds
+--- mutex t=2 ---
+[main] Inserted 100000 keys in 0.005397 seconds
+[main] Retrieved 100000/100000 keys in 3.354611 seconds
+--- spinlock t=2 ---
+[Athul R - ar6316][main] Inserted 100000 keys in 0.004023 seconds
+[Athul R - ar6316][main] Retrieved 100000/100000 keys in 3.621260 seconds
+--- original t=4 ---
+[main] Inserted 100000 keys in 0.004057 seconds
+[main] Retrieved 99948/100000 keys in 3.656209 seconds
+--- mutex t=4 ---
+[main] Inserted 100000 keys in 0.005583 seconds
+[main] Retrieved 100000/100000 keys in 3.681847 seconds
+--- spinlock t=4 ---
+[Athul R - ar6316][main] Inserted 100000 keys in 0.004683 seconds
+[Athul R - ar6316][main] Retrieved 100000/100000 keys in 3.561939 seconds
+--- original t=8 ---
+[main] Inserted 100000 keys in 0.004145 seconds
+[main] Retrieved 99922/100000 keys in 3.790078 seconds
+--- mutex t=8 ---
+[main] Inserted 100000 keys in 0.005765 seconds
+[main] Retrieved 100000/100000 keys in 3.585251 seconds
+--- spinlock t=8 ---
+[Athul R - ar6316][main] Inserted 100000 keys in 0.004388 seconds
+[Athul R - ar6316][main] Retrieved 100000/100000 keys in 3.693376 seconds
+--- original t=16 ---
+[main] Inserted 100000 keys in 0.007576 seconds
+[main] Retrieved 99982/100000 keys in 3.996082 seconds
+--- mutex t=16 ---
+[main] Inserted 100000 keys in 0.007493 seconds
+[main] Retrieved 100000/100000 keys in 3.874274 seconds
+--- spinlock t=16 ---
+[Athul R - ar6316][main] Inserted 100000 keys in 0.005567 seconds
+[Athul R - ar6316][main] Retrieved 100000/100000 keys in 3.838047 seconds
+--- original t=32 ---
+[main] Inserted 100000 keys in 0.006478 seconds
+[main] Retrieved 99936/100000 keys in 3.620811 seconds
+--- mutex t=32 ---
+[main] Inserted 100000 keys in 0.010986 seconds
+[main] Retrieved 100000/100000 keys in 3.995091 seconds
+--- spinlock t=32 ---
+[Athul R - ar6316][main] Inserted 100000 keys in 0.007660 seconds
+[Athul R - ar6316][main] Retrieved 100000/100000 keys in 3.747586 seconds
+--- original t=64 ---
+[main] Inserted 100000 keys in 0.008414 seconds
+[main] Retrieved 99959/100000 keys in 3.643007 seconds
+--- mutex t=64 ---
+[main] Inserted 100000 keys in 0.010155 seconds
+[main] Retrieved 100000/100000 keys in 3.912826 seconds
+--- spinlock t=64 ---
+[Athul R - ar6316][main] Inserted 100000 keys in 0.011139 seconds
+[Athul R - ar6316][main] Retrieved 100000/100000 keys in 3.862155 seconds
+--- original t=128 ---
+[main] Inserted 100000 keys in 0.014593 seconds
+[main] Retrieved 99963/100000 keys in 3.811265 seconds
+--- mutex t=128 ---
+[main] Inserted 100000 keys in 0.014876 seconds
+[main] Retrieved 100000/100000 keys in 4.074241 seconds
+--- spinlock t=128 ---
+[Athul R - ar6316][main] Inserted 100000 keys in 0.017237 seconds
+[Athul R - ar6316][main] Retrieved 100000/100000 keys in 3.850805 seconds
+--- original t=256 ---
+[main] Inserted 100000 keys in 0.020570 seconds
+[main] Retrieved 99804/100000 keys in 3.792095 seconds
+--- mutex t=256 ---
+[main] Inserted 100000 keys in 0.027301 seconds
+[main] Retrieved 100000/100000 keys in 4.210520 seconds
+--- spinlock t=256 ---
+[Athul R - ar6316][main] Inserted 100000 keys in 0.022958 seconds
+[Athul R - ar6316][main] Retrieved 100000/100000 keys in 3.738625 seconds
